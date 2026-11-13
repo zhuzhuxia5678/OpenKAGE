@@ -1,6 +1,6 @@
 # OpenKAGE
 
-**Open** Knowledge-sharing **A**gent-**G**roup **E**volution —— 一个免训练框架：一组 LLM 智能体在开放世界探索中持续积累、共享并复用知识。
+**Open** **K**nowledge-sharing **A**gent-**G**roup **E**volution —— 一个免训练框架：一组 LLM 智能体在开放世界探索中持续积累、共享并复用知识。
 
 [English](README.md)
 

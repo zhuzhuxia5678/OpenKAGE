@@ -1,6 +1,6 @@
 # OpenKAGE
 
-**Open** Knowledge-sharing **A**gent-**G**roup **E**volution — a training-free framework in which a group of LLM agents accumulates, shares and reuses knowledge while exploring an open world.
+**Open** **K**nowledge-sharing **A**gent-**G**roup **E**volution — a training-free framework in which a group of LLM agents accumulates, shares and reuses knowledge while exploring an open world.
 
 [简体中文](README.zh-CN.md)
 

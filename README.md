@@ -43,23 +43,23 @@ The associated paper evaluates groups of three agents over 30 game days on four 
 
 ## Demo gallery
 
-Six short Minecraft clips from the last slide of `演示动图.pptx`. The six source GIFs (88.68 MiB total) were converted to 480×270, 12 fps H.264 MP4s with JPEG posters (6.34 MiB total); **click a thumbnail to play the MP4**. The source GIFs are not included.
+Six short Minecraft clips from the last slide of `演示动图.pptx`. The six source GIFs (88.68 MiB total) were palette-optimized to 480×270 looping GIFs (50.94 MiB total) at roughly 8 fps; the clips play inline below. `videos/manifest.json` records labels, frame counts, and durations.
 
 | Shelter | Fishing | Obsidian crafting |
 |---|---|---|
-| [![Shelter](media/videos/shelter.jpg)](media/videos/shelter.mp4)<br>[MP4](media/videos/shelter.mp4) | [![Fishing](media/videos/fishing.jpg)](media/videos/fishing.mp4)<br>[MP4](media/videos/fishing.mp4) | [![Obsidian crafting](media/videos/obsidian.jpg)](media/videos/obsidian.mp4)<br>[MP4](media/videos/obsidian.mp4) |
+| ![Shelter](media/videos/shelter.gif) | ![Fishing](media/videos/fishing.gif) | ![Obsidian crafting](media/videos/obsidian.gif) |
 | Farming | Hunting | Nether portal |
-| [![Farming](media/videos/farming.jpg)](media/videos/farming.mp4)<br>[MP4](media/videos/farming.mp4) | [![Hunting](media/videos/hunting.jpg)](media/videos/hunting.mp4)<br>[MP4](media/videos/hunting.mp4) | [![Nether portal](media/videos/nether_portal.jpg)](media/videos/nether_portal.mp4)<br>[MP4](media/videos/nether_portal.mp4) |
+| ![Farming](media/videos/farming.gif) | ![Hunting](media/videos/hunting.gif) | ![Nether portal](media/videos/nether_portal.gif) |
 
 ## Viewer screenshots
 
-Screenshots from the read-only viewer, captured with headless Chrome at 1600×1000. The data shelf was hidden; see [media/README.md](media/README.md) for asset provenance.
+Screenshots from the read-only viewer, captured with headless Chrome at 1600×1000 in the light theme. The data shelf was hidden; see [media/README.md](media/README.md) for asset provenance.
 
-| Knowledge graph | Exploration map | Map detail |
-|---|---|---|
-| ![Knowledge graph](media/screenshots/knowledge_graph.jpg) | ![Exploration map](media/screenshots/exploration_map.jpg) | ![Map detail](media/screenshots/exploration_map_focus.jpg) |
-| Metrics | Inventory | Achievements |
-| ![Metrics](media/screenshots/metrics.jpg) | ![Inventory](media/screenshots/inventory.jpg) | ![Achievements](media/screenshots/achievements.jpg) |
+| Knowledge graph | Exploration map |
+|---|---|
+| ![Knowledge graph](media/screenshots/knowledge_graph.jpg) | ![Exploration map](media/screenshots/exploration_map.jpg) |
+| Node detail | Achievements |
+| ![Node detail](media/screenshots/node_detail.jpg) | ![Achievements](media/screenshots/achievements.jpg) |
 
 ## Repository layout
 
@@ -75,7 +75,7 @@ Screenshots from the read-only viewer, captured with headless Chrome at 1600×10
 | `viewer/` | Read-only frontend visualization web page for browsing `results/` (Python server + prebuilt frontend). |
 | `paper/iclr2027/tables/` | Per-day series and skill-usage figure data. |
 | `paper/iclr2027/fig/` | The six regenerated result figures as SVG and PDF. |
-| `media/` | Demo clips, posters, and viewer screenshots; see [media/README.md](media/README.md). |
+| `media/` | Optimized demo GIFs and viewer screenshots; see [media/README.md](media/README.md). |
 | `LICENSE` | MIT License with an anonymous copyright holder. |
 
 ## Installation

@@ -2,61 +2,41 @@
   {
     "file": "knowledge_graph.jpg",
     "caption": "Knowledge graph",
-    "source": "clean_knowledge_graph.png",
+    "source": "light_knowledge_graph.png",
     "size": [
       1280,
       800
     ],
-    "kib": 130.4
+    "kib": 121.8
   },
   {
     "file": "exploration_map.jpg",
-    "caption": "Exploration map (split view)",
-    "source": "clean_exploration_map.png",
+    "caption": "Exploration map",
+    "source": "light_exploration_map.png",
     "size": [
       1280,
       800
     ],
-    "kib": 193.2
-  },
-  {
-    "file": "exploration_map_focus.jpg",
-    "caption": "Exploration map (detail)",
-    "source": "clean_exploration_map_focus.png",
-    "size": [
-      533,
-      904
-    ],
-    "kib": 97.1
-  },
-  {
-    "file": "metrics.jpg",
-    "caption": "Metrics",
-    "source": "clean_metrics.png",
-    "size": [
-      1280,
-      800
-    ],
-    "kib": 144.5
-  },
-  {
-    "file": "inventory.jpg",
-    "caption": "Inventory",
-    "source": "clean_inventory.png",
-    "size": [
-      1280,
-      800
-    ],
-    "kib": 163.3
+    "kib": 186.1
   },
   {
     "file": "achievements.jpg",
     "caption": "Achievements",
-    "source": "clean_achievements.png",
+    "source": "light_achievements.png",
     "size": [
       1280,
       800
     ],
-    "kib": 164.4
+    "kib": 159.8
+  },
+  {
+    "file": "node_detail.jpg",
+    "caption": "Node detail",
+    "source": "light_node_detail.png",
+    "size": [
+      1280,
+      800
+    ],
+    "kib": 123.0
   }
 ]

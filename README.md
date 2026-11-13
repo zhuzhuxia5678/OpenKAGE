@@ -43,7 +43,7 @@ The associated paper evaluates groups of three agents over 30 game days on four 
 
 ## Demo gallery
 
-Six short Minecraft clips from the last slide of `演示动图.pptx`. The six source GIFs (88.68 MiB total) were palette-optimized to 480×270 looping GIFs (50.94 MiB total) at roughly 8 fps; the clips play inline below. `videos/manifest.json` records labels, frame counts, and durations.
+Six short Minecraft behavior demos. The six source GIFs (88.68 MiB total) were palette-optimized to 480×270 looping GIFs (50.94 MiB total) at roughly 8 fps; the clips play inline below. `videos/manifest.json` records labels, frame counts, and durations.
 
 | Shelter | Fishing | Obsidian crafting |
 |---|---|---|

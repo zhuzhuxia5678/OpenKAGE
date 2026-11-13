@@ -2,7 +2,7 @@
 
 ## Demo clips
 
-`videos/` contains six palette-optimized looping GIFs converted from the six animated GIFs on the last slide of `演示动图.pptx`. The source GIFs totaled 88.68 MiB; the optimized GIFs total 50.94 MiB at 480×270 and roughly 8 fps, with reduced frame counts and preserved clip durations. `videos/manifest.json` records the Chinese and English labels, source media names, optimized sizes, frame counts, durations, and loop setting.
+`videos/` contains six palette-optimized looping GIFs converted from six source animated GIFs. The unoptimized clips totaled 88.68 MiB; the optimized GIFs total 50.94 MiB at 480×270 and roughly 8 fps, with reduced frame counts and preserved clip durations. `videos/manifest.json` records the Chinese and English labels, source media names, optimized sizes, frame counts, durations, and loop setting.
 
 ## Viewer screenshots
 

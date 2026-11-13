@@ -6,6 +6,6 @@
 
 ## Viewer screenshots
 
-`screenshots/` contains four JPEGs captured from the read-only viewer with headless Chrome at 1600×1000 in the light theme. The data shelf was hidden so the images show only the visualization UI. `screenshots/manifest.json` records captions and source files. The knowledge graph, exploration map, node detail, and achievements views are included.
+`screenshots/` contains four JPEGs captured from the read-only viewer with headless Chrome at 1600×1000 in the light theme. The data shelf was hidden so the images show only the visualization UI. `screenshots/manifest.json` records captions and source files. The knowledge graph, exploration map, achievements, and node-detail views are included.
 
 No author names, host names, account names, internal paths, or credentials appear in these assets.

@@ -58,8 +58,8 @@ OpenKAGE 研究 LLM 智能体在 Minecraft 中的开放式长程学习。智能�
 | 知识图谱 | 探索地图 |
 |---|---|
 | ![知识图谱](media/screenshots/knowledge_graph.jpg) | ![探索地图](media/screenshots/exploration_map.jpg) |
-| 节点详情 | 成就清单 |
-| ![节点详情](media/screenshots/node_detail.jpg) | ![成就清单](media/screenshots/achievements.jpg) |
+| 成就清单 | 节点详情 |
+| ![成就清单](media/screenshots/achievements.jpg) | ![节点详情](media/screenshots/node_detail.jpg) |
 
 ## 仓库结构
 

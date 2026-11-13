@@ -58,8 +58,8 @@ Screenshots from the read-only viewer, captured with headless Chrome at 1600×10
 | Knowledge graph | Exploration map |
 |---|---|
 | ![Knowledge graph](media/screenshots/knowledge_graph.jpg) | ![Exploration map](media/screenshots/exploration_map.jpg) |
-| Node detail | Achievements |
-| ![Node detail](media/screenshots/node_detail.jpg) | ![Achievements](media/screenshots/achievements.jpg) |
+| Achievements | Node detail |
+| ![Achievements](media/screenshots/achievements.jpg) | ![Node detail](media/screenshots/node_detail.jpg) |
 
 ## Repository layout
 

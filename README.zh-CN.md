@@ -170,7 +170,7 @@ python experiments/paper_metrics.py --cell glm53_openkage --format json --all
 | 输入 | 内容 |
 |---|---|
 | `paper/iclr2027/tables/daily_series.json` | 15 个主表格逐 run、逐智能体、逐天的序列：死亡与死因、累计 XP、里程碑首达夜、技能调用、技能库规模、成就。 |
-| `paper/iclr2027/tables/rb_e13_figdata.json` | Figure 11(b,c) 用的技能调用结果与改码前后窗口数据。 |
+| `paper/iclr2027/tables/skill_usage_figdata.json` | Figure 11(b,c) 用的技能调用结果与改码前后窗口数据。 |
 | `results/<cell>/runNN/checkpoint_<agent>_r*.json` | Figure 6 / 12 使用的原始 checkpoint，由单独的运行记录归档提供。 |
 
 ```bash

@@ -5,7 +5,7 @@ All inputs and outputs live inside this package; no external paths are needed.
 
 Inputs:
   - ``paper/iclr2027/tables/daily_series.json``  per-run, per-day series
-  - ``paper/iclr2027/tables/rb_e13_figdata.json``  skill-usage data for Figure 11(b,c)
+  - ``paper/iclr2027/tables/skill_usage_figdata.json``  skill-usage data for Figure 11(b,c)
   - ``results/<cell>/runNN/checkpoint_<agent>_r*.json``  raw checkpoints for Figure 6 / 12
   - ``results/adv_icons/``  milestone icons drawn on the curves
 
@@ -232,7 +232,7 @@ import statistics as st
 
 def fig_knowledge(D):
     """a 可用技能库规模（Full 总量 / Full 中本人所写 / −S）；b 四骨干上本人 vs 他人技能的调用失败率；
-    c DS 上失败后改码的前后失败率（数据：tables/rb_e13_figdata.json，由 rb_e13_skill_usage.py 生成）。"""
+    c DS 上失败后改码的前后失败率（数据：tables/skill_usage_figdata.json，由技能使用分析生成）。"""
     fig, axes = plt.subplots(1, 3, figsize=(5.5, 1.75))
     days = range(1, 31)
     full = [a for r in D["DS/OK"] for a in r["agents"]]
@@ -262,7 +262,7 @@ def fig_knowledge(D):
     ax.set_xticks([1, 10, 20, 30])
     ax.set_xlabel("Day")
     ax.set_ylabel("Skills")
-    fd = json.loads((ROOT / "paper" / "iclr2027" / "tables" / "rb_e13_figdata.json").read_text(encoding="utf-8"))
+    fd = json.loads((ROOT / "paper" / "iclr2027" / "tables" / "skill_usage_figdata.json").read_text(encoding="utf-8"))
     # b：四骨干上本人技能 vs 他人技能的调用失败率（柱=合并后的比率，点=单个 run）
     ax = axes[1]
     for i, (b_, name) in enumerate(BACKBONES):

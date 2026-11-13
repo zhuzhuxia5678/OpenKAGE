@@ -170,7 +170,7 @@ The default table reports `Deaths`, `Repeat`, `XP/life`, `Tool era`, `Obsidian`,
 | Input | Contents |
 |---|---|
 | `paper/iclr2027/tables/daily_series.json` | Per-run, per-agent, per-day series for the 15 main-table cells: deaths and causes, cumulative XP, milestone first-reach days, skill calls, skill-library size, advancements. |
-| `paper/iclr2027/tables/rb_e13_figdata.json` | Skill-call outcomes and code-revision windows used by Figure 11(b,c). |
+| `paper/iclr2027/tables/skill_usage_figdata.json` | Skill-call outcomes and code-revision windows used by Figure 11(b,c). |
 | `results/<cell>/runNN/checkpoint_<agent>_r*.json` | Raw checkpoints for Figures 6 and 12, provided by the separate results archive. |
 
 ```bash

@@ -1,0 +1,156 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# 所有 Agent 共用的**默认文案**（模型可见的措辞，一处定义、各 Agent 兜底取用）
+# ═══════════════════════════════════════════════════════════════════════════════
+# ───────────────────────────────────────────────────────────────────────────────
+tool_results:
+
+  # ═════════════════════════════════════════════════════════════════════════════
+  # ① retrieve / expand —— 框架层检索工具（RetrieveMemoryTool / ExpandMemoryTool）
+  # ═════════════════════════════════════════════════════════════════════════════
+
+  # ── retrieve / expand 共用的来源标签 ──
+  scope_label_public: 公共经验
+  scope_label_own: 经验
+
+  # ── retrieve ──
+  retrieve_empty_query: query 不能为空。
+  retrieve_miss: 没有检索到相关经验
+  retrieve_hit: |-
+    【{label}】
+    {ctx}
+  # ★ 增量去重后的"无新增"提示（2026-09-13）：Agent 主动 retrieve 且命中全被去重时，
+  #   用它替代 retrieve_miss —— 一句话让 Agent 知道相关经验在上文（非真 miss），
+  #   细节用 expand 展开或换意图重查。由工具 seen_provider 路径直接返回。
+  retrieve_dedup_note: 相关经验今天就已在上面附过。细节回看上文，或 expand 展开 / 换个意图再查
+  # ── expand ──
+  expand_empty_slug: slug 不能为空（从 retrieve 结果里的 `(slug=…)` 复制）。
+  expand_hit: |-
+    【{label}】从「{center}」展开：
+    {ctx}
+  expand_miss_with_relation: |-
+    没有找到 slug=「{slug}」上 relation={relation} 的邻居。slug 要从 retrieve 结果的 `(slug=…)` 里原样复制；也可能这个方向上确实还没有沉淀，换个关系或直接用 retrieve 换个意图查。
+  expand_miss_no_relation: |-
+    没有找到 slug=「{slug}」 这个概念，或它没有相邻概念。slug 要从 retrieve 结果的 `(slug=…)` 里原样复制；也可能这个方向上确实还没有沉淀，换个关系或直接用 retrieve 换个意图查。
+
+  # ── retrieve_skills —— 框架层技能签名检索工具（RetrieveSkillsTool）──
+  # 跨臂检索 skill_{arm}_vec.db，结果不区分来源臂（与签名层 _inject_all_skills 同源）。
+  retrieve_skills_empty_query: query 不能为空。
+  retrieve_skills_miss: 没有检索到相关技能
+  retrieve_skills_label: 检索到的技能
+  retrieve_skills_hit: |-
+    【{label}】
+    {lines}
+  # ★ 增量去重后的"无新增"提示（与 retrieve_dedup_note 同机制，技能版）。
+  retrieve_skills_dedup_note: 相关技能今天就已在上面附过。签名回看上文
+
+  # ── create_skill —— 语义查重警告（只警告不拦，CreateSkillTool 建技能后按 intent 检索）──
+  create_skill_similar_warning: |-
+    ⚠️ 检测到意图相似的已有技能：{hits}。本条已照样存入（verified=1）。
+
+  # ═════════════════════════════════════════════════════════════════════════════
+  # ② 10 个 CRUD 工具（create_concept … manage_edge）
+  # ═════════════════════════════════════════════════════════════════════════════
+
+  # ── 参数校验（5 个工具共用一份，避免五处漂移）──
+  slug_empty: slug 不能为空
+  slug_no_info: |-
+    slug {slug} 规整后变成 {collapsed}，等于没有信息 —— slug **只能用**英文字母/数字/下划线，中文和其它非 ASCII 字符会被直接丢弃。请改用英文 snake_case 重述这个概念（例如 `my_camp_1` / `east_mine` / `day_3`），它是你之后 manage_edge / get_concept 唯一的抓手。中文概念名放 `name` 参数，那里不受限制
+  kind_empty: kind 不能为空
+  label_too_long: |-
+    {what} 过长（{n}>{max_len} 字符）：它是一个**短标签**、不是内容本身，请用一个能复用的短词（内容写在 content 里）
+  label_has_newline: |-
+    {what} 不能含换行/制表符 —— 它是个短标签，会被拿去当分组键、也会参与检索打分
+  reason_empty: |-
+    reason 不能为空 —— 删除是不可逆的，而这条理由是**唯一**留下来的凭证（内容本身不留副本）。写清「为什么这条该消失」
+  reason_too_short: |-
+    reason 太短（{reason}）——它是删除的唯一凭证，事后只能靠它判断这次删对没删对。写清「为什么这条该消失」，比如「slug 手滑打错、内容已在正确的概念上重记」
+  content_too_long: content 过长（{n}>{max_chars} 字符），未写入也未截断。压缩到上限内（保留数字/条件/教训，删铺垫重复措辞），或拆到别的 kind / 新建 Concept
+  content_empty: |-
+    content 不能为空 —— facet 的价值全在内容里。空内容会占掉这个 (概念, kind) 槽位、让后续 add_facet 以为已经记过了，而检索时又渲染成一个空条目
+
+  # ── create_concept ──
+  layer_invalid: |-
+    layer 必须是 {layers} 之一（你给的是 {layer}）。memory = 只属于你的具体经历（专名、带出处）；experience = 你归纳出的、别人也能用的结论（通名）
+  category_invalid: |-
+    记忆层（memory）的概念必须声明 category，且必须是 {categories} 之一（你给的是 {category}）。判据：episodic = 绑在具体某一天的事（day_N 及当天的卡点/发现）；spatial = 有位置的持久资产（营地、箱子、矿洞）；lesson = 事件/遭遇的教训（死亡、受骗）；status = 跨天滚动更新的自我状态（当前进度、待办）。经验层（experience）不要 category。
+  concept_exists: |-
+    slug={slug} 已经存在了（{layer} 层，已有 facet kind：{kinds}）—— **没有新建**。先用 `get_concept("{plain_slug}")` 看它现在记了什么，然后：①要补充/改准这个概念 → `update_facet`（该 kind 已有）或 `add_facet`（该 kind 还没有）；③你要记的**确实是另一个概念** → 换一个能区分开的 slug 重试。
+
+  # ── update_concept ──
+  update_concept_no_field: 至少要传 name/slug/summary 中的一个
+  concept_not_found: |-
+    concept_slug={slug} 不存在
+  slug_taken: |-
+    slug={slug} 已被其它 Concept 占用，换一个
+
+  # ── facet ──
+  facet_limit: "{slug} 已有 {n} 条 facet（上限 {max_n}），未写入。并进已有 kind（update_facet），或拆成新 Concept 再用 manage_edge 连回"
+  facet_exists: |-
+    {slug} 已经有一条 {kind} facet 了，用 update_facet 概括进去
+  facet_kind_missing: |-
+    {slug} 这个概念下还没有 {kind} 这一类内容 —— 用 add_facet 新建（本工具只改已有的）。已有的是：{kinds}
+  facet_concept_missing: |-
+    concept_slug={slug} 这个概念不存在。先用 search_concepts 确认 slug 的准确拼写
+
+  # ── merge_concepts ──
+  merge_same_slug: primary_slug 和 secondary_slug 不能相同
+  merge_missing: primary_slug 或 secondary_slug 不存在
+  merge_cross_layer: |-
+    不能跨层合并：{primary} 是 {p_layer} 层，{secondary} 是 {s_layer} 层。记忆（具体经历、带出处）与经验（可共享的通名结论）是两种东西 —— 它们本就不该是「同一个概念的冗余副本」。如果你想说这条经验来自那次经历，用 manage_edge 连一条边，而不是把它们并成一个
+  merge_failed_rolled_back: |-
+    合并失败，图谱已回滚到合并前的状态（{primary} 与 {secondary} 都保持原样）：{exc}
+  merged_from: |-
+    （合并自 {slug}）
+
+  # ── manage_edge ──
+  edge_action_invalid: action 必须是 add/delete/update 之一
+  edge_relation_empty: relation 不能为空
+  edge_self_loop: |-
+    from_slug 与 to_slug 相同（都是 {slug}）—— 边是两个**不同**概念之间的关系，不能自己指向自己
+  edge_both_missing: |-
+    两端的概念都不存在（{from_slug} 和 {to_slug}）。
+  edge_one_missing: |-
+    {which}={missing} 这个概念不存在（另一端 {other} 是存在的）。
+  edge_missing_tail: |-
+    先用 search_concepts 确认 slug 的准确拼写，或者这个概念还没建 —— 那就先 create_concept
+  edge_exists_note: |-
+    这条边之前就有了（{from_slug} --{relation}--> {to_slug}），本次没有任何改动
+  edge_not_found: |-
+    不存在 {from_slug}→{to_slug} 的 {relation} 边
+  edge_update_needs_new_relation: update 需要提供 new_relation
+  edge_new_relation_same: new_relation 跟 relation 相同，无需修改
+
+  # ── search_concepts ──
+  search_graph_empty: |-
+    图谱还是空的，你还没记过任何东西 —— 直接 create_concept 即可
+  search_channel_down: |-
+    ⚠️ 语义检索当前不可用（向量通道无结果，图谱里有 {n_concepts} 个概念）。这不代表你没记过这件事，只代表这次查不了。
+  search_all_stale: |-
+    ⚠️ 语义检索命中 {n_stale} 条记录，但它们指向的概念在图谱里都已不存在（向量库与主库不一致）。这不代表你没记过。
+  search_note_ranked: 按相关度从高到低排列（similarity 是余弦相似度，越大越像）
+  search_note_recent: 最近更新的概念（不是检索结果）
+  search_note_stale_suffix: |-
+    （另有 {n_stale} 条命中指向已不存在的概念，已跳过）
+  search_limit_invalid: |-
+    limit={limit} 无效（要 1~{max_limit} 之间的整数），本次没有检索
+
+  # ── del_facet ──
+  del_facet_concept_missing: |-
+    concept_slug={slug} 这个概念不存在（不是 kind 的问题）。先用 search_concepts 确认 slug 的准确拼写
+  del_facet_kind_missing: |-
+    {slug} 下没有 {kind} 这一类内容，无需删除。已有的是：{kinds}
+  del_facet_now_empty: |-
+    ⚠️ {slug} 现在一条 facet 都没有了 —— 它成了个有名字没内容的空壳，但仍会被检索命中、挤掉真正有内容的概念。请二选一：① 用 add_facet 给它补上内容；② 如果这个概念本身就不该存在，用 del_concept 把它整个删掉
+
+  # ── del_concept ──
+  del_concept_not_found: |-
+    concept_slug={slug} 不存在。先用 search_concepts 确认 slug 的准确拼写
+  del_concept_inbound_warning: |-
+    ⚠️ 顺带删掉了 {edges}{more} —— 这些是别的概念指向 {slug} 的边，删掉后它们之间可能断开了。如果被断开的两端本该直接相连，用 manage_edge 补一条边接上
+  del_concept_inbound_more: |-
+    （共 {n} 条）
+
+  # ── 填充词（原来在 py 里写成 `or '无'` 的那几个字面量）──
+  filler_unknown_layer: 未知
+  filler_no_kinds: 无
+  filler_no_facets: 一条都没有

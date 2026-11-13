@@ -1,0 +1,169 @@
+# OpenKAGE框架训练参数配置（experiments/run.py 默认加载，--config 可指向其他 yml）。
+# yml 是运行期参数的唯一真相，命令行 flag 只做覆盖；python 侧不留默认值，缺字段直接报错。
+
+# ---- 一级图谱参数：只作用于 primary/frozen 实例 ----
+memory_graph:
+  anchor:
+    # Vector candidates considered as entry points. Calibrated on real arm graphs
+    # with `experiments/calibrate_retrieval.py --sweep`; the entry cap dominates the
+    # number of retrieved nodes under this setting.
+    topk: 4              # 向量召回候选数，也是入口数上限
+    min_score: 0.0       # 绝对分数门，0 = 关闭。余弦绝对值不可跨 embedding 模型移植，
+                         # 要门槛就用下面的相对门。
+    gap_ratio: 0.8       # 相对门：与最佳匹配的分数比不低于此值才作为入口
+  expand:
+    max_hops: 2          # 走几跳的上限（夹的是 Agent 在工具里指定的 hops）
+                         # rollout 的 `retrieve(query)` 用 hops=1 默认值，不受本值影响。
+    top_p: 0.95          # 低概率边剪枝，1.0 = 不剪枝
+    temperature: 1.0     # softmax 温度：越小越只走最优边
+  search_max_limit: 50           # search_concepts 工具的 limit 上限，越界报错而不夹取
+  memory_dump_max_concepts: 35   # dump_layer_index / dump_layer_full 的防倾泻护栏
+                                 # （正文注入改按下面的桶预算）。
+  # 记忆层正文注入的桶预算：按 concept.category 分桶，各桶独立 updated_at 倒序，
+  # 桶不满时名额回填全局排名。四类为 episodic / spatial / lesson / status。
+  memory_dump_budgets:
+    episodic: 18
+    spatial: 10
+    lesson: 4
+    status: 3
+
+  strength:
+    gain_expand: 1.0     # expand(slug) 命中的强度增益
+    gain_retrieve: 0.1   # retrieve 命中的强度增益
+  dedup:
+    similarity: 0.65     # 跨 batch 去重预筛的余弦相似度门（只提示，不自动合并）
+    top_k: 3             # 每个概念给几个疑似重复候选
+  max_reflect_steps: 99      # 反思 ReActAgent 的最大步数
+  max_consolidate_steps: 99  # 聚合 ReActAgent 的最大步数
+
+  # ---- facet 硬上限 ----
+  # `update_facet` 整条覆盖，热 facet 会随窗口膨胀；content 超限让 Agent 自己压缩或
+  # 拆成新概念。分片 = name+kind+content，最坏约 480 字，仍在嵌入器 512 token 窗口内。
+  facet:
+    max_chars: 400           # content 硬上限；超限工具返回 ok:false（不是截断）
+    max_per_concept: 6       # 每概念最多几条 facet，同时界定索引过取倍数
+
+  # ---- 分块向量索引 ----
+  # 一个概念 = 1+N 条向量（identity = name\nsummary；每条 facet 各一条 `{kind}: {content}`），
+  # 检索时过取分片行 → 按概念分组 → 加权融合成一个分数：
+  #   score = (w_identity·cos_id + w_facet·agg(cos_facet_k)) / (实际参与的分片权重之和)
+  # 除以权重和让输出仍在余弦量程。分片键用 kind 而非序号，删 facet 不会让其余 key 位移。
+  # 换 embedding 模型后这两个权重与 part_max_chars 需重标。
+  index:
+    w_identity: 1.0
+    w_facet: 1.0
+    facet_agg: max           # max = 最匹配的那条 facet 决定概念得分
+                             # mean = 要求整体相关
+    part_max_chars: 512      # 单分片告警线 + 截断阈值（对齐嵌入器 512 token 窗口）
+
+# ---- 技能库参数（技能走各臂独立向量库，与记忆图谱检索解耦）----
+# 单独成节而不并进 memory_graph：技能向量库与记忆图谱物理隔离，调参场合不同
+# （技能查重阈值 vs 记忆召回阈值），混进 memory_graph 会让人以为两者联动。
+skill:
+  # create_skill 时按 intent 跨臂语义检索，相似度 ≥ 此值的已有技能会塞进返回 warning
+  # （只警告不拦，宁松不严——Agent 一看便知真重复还是同领域合理分工）。
+  # 余弦绝对值不可跨 embedding 模型移植，但后果良性，故不设严门、不自动合并。
+  # 0.65 卡在「同义改写」与「不同任务」之间；同句式换实体的误警告是 dense embedding
+  # 的固有局限，接受软警告误报。
+  similar_warn_threshold: 0.65
+
+  # 执行期签名块默认注入的技能条数（代码层始终全量注入不动）。
+  # 选法 = 全局排序取前 N，不随当天 goal 轮换：
+  #   total_success_count ↓ → success_count ↓ → updated_at ↓ → created_at ↓ → slug ↑。
+  # 范围外技能代码层仍全量注入，Agent 想用可调 retrieve_skills('你的意图') 查签名后直接 await。
+  # 签名层限 N 而不全量常驻：全量签名会诱导 LLM 反复调用排榜首的技能。
+  signature_topk: 20
+
+# ---- LLM: token budgets, sampling, and three nested retry layers ----
+# Worst-case attempts = rollout.attempts x api.error_retries x (sdk.max_retries + 1)
+# The endpoint is set by OPENAI_API_KEY / OPENAI_BASE_URL (see .env.example).
+llm:
+  max_tokens:
+    answer: 131072       # task rollout (long reasoning and action code)
+    reflect_step: 65536  # one reflector / aggregator tool-call step; must stay below answer
+  # budget for short free-text calls (the night note). Reasoning tokens share max_tokens with
+  # the visible output, so this must leave room for both.
+  night_note_max_tokens: 8192
+  # Reasoning effort per role: none / minimal / low / medium / high. "none" means the
+  # parameter is not sent at all (use it for models or providers that do not accept it).
+  # Unset effort on a reasoning model can consume the whole budget, so set it deliberately.
+  reasoning_effort:
+    task: low
+    reflect: low
+    consolidate: low
+  # Sampling temperature per role: task is near-deterministic, reflection and aggregation
+  # allow varied phrasing.
+  temperature:
+    task: 0.3
+    reflect: 0.7
+    consolidate: 0.7
+  sdk:                   # (1) transport / HTTP retries (timeouts, 429, 5xx)
+    timeout:             # seconds per call, per role
+      task: 300
+      reflect: 600
+      consolidate: 300
+    max_retries: 6
+    retry_base_delay: 2.0
+    retry_max_delay: 30.0
+  api:                   # (2) malformed or empty responses (no choices): exponential backoff
+    error_retries: 4
+    error_base_delay: 2.0
+  rollout:               # (3) rollout layer: no tool call returned, linear backoff
+    attempts: 3
+    call_delay: 4.0
+
+# ---- 训练侧规模 ----
+train:
+  arms: 3                  # 副脑个数（读 arms/<domain>/*.md 前 N 个，按文件名排序）
+  epochs: 1                # 训练轮数
+  n_train: 1               # 训练题数；"all" = 用全部
+  batches: 1               # 分成几个 batch = 做几次题间聚合（题内聚合见 domain_scale）
+  n_samples: 1             # 一个题目 rollout 几次
+  # 按角色分的三个底座（语义/实测依据见 openkage/config.py 的 ModelConfig）。
+  # 必须三个都写全，不接受裸字符串；要三个一样就写三遍。
+  model:
+    # API model names, one per role (all three must be given). Set to the model id your
+    # OPENAI_BASE_URL endpoint serves, e.g. deepseek-flash for https://api.deepseek.com.
+    task: deepseek-flash          # task rollout
+    reflect: deepseek-flash       # reflection: digest a trajectory into the private graph
+    consolidate: deepseek-flash   # aggregation: merge experience into the shared graph
+
+# ---- 域私有规模（键名 = --domain 的值）----
+# 框架层不读本节，由 experiments/run.py 经 _build_domain 传给对应域的构造函数。
+domain_scale:
+  minecraft:
+    max_nights: 30       # 一条轨迹过几个夜晚（轨迹长度的唯一闸门）
+    aggregate_every: 2   # 题内聚合周期：每 K 夜聚合一次并只清经验层；0 = 只在轨迹末尾聚合
+    tick_rate: 2.5       # 游戏倍速 N（1=自然流速）。>1 时昼夜/动作按 N 倍速压缩墙钟；
+                         # server /tick rate + 客户端 setTickRate 两侧同步。详见 run.py --tick-rate。
+                         # 高倍速下 server 主线程余量变小，容器交互可能卡顿。
+    difficulty: hard     # 世界难度挡位：peaceful/easy/normal/hard（MC 原生取值）。
+                         # 每 worker 重生时强制写入 server.properties；不同难度之间不可直接横比。
+    # 世界重生协议种子：regenerate_world 每条轨迹开头按 world_seed 重生世界，地形逐块恒定。
+    # spawn_seed 是出生点 RNG 种子（仅 --no-fixed-spawn 随机出生路径用）。
+    # --fixed-spawn 默认用世界自然出生点，由 level-seed 决定；seed 7 的出生点在 plains。
+    world_seed: "7"      # 世界地形 seed
+    spawn_seed: "20260926"  # 出生点 RNG 种子
+    # 任务域 ReActAgent 每天的最大步数（防死循环兜底，**不是动作预算**）。
+    # ReAct 的 step 计数含 createplan/retrieve/expand 这些不推进游戏时间的调用，真正出口是
+    # 天亮（react_day 的 should_stop 读 state["day_over"]）；给足余量让天亮做唯一出口。
+    react_max_steps: 299
+
+# ---- 评测侧规模 ----
+eval:
+  n_eval: 0                
+  k: 0                    
+
+# --smoke 的规模覆盖（只覆盖这里列出的键，domain_scale 逐键 merge）。
+# aggregate_every 必须与正式默认同为非 0，否则 smoke 走的是另一条代码路径。
+smoke:
+  arms: 2
+  epochs: 1
+  n_train: 1
+  batches: 1
+  n_eval: 0
+  k: 1
+  domain_scale:
+    minecraft:
+      max_nights: 1        # 只过 1 夜，足够验证黎明反思链路
+      aggregate_every: 1   # 1 夜 = 1 个题内聚合窗口

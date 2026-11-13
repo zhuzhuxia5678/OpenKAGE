@@ -12,6 +12,8 @@ It does **not** include the experiment run records. Those are distributed separa
 
 - [What is OpenKAGE](#what-is-openkage)
 - [Highlights](#highlights)
+- [Demo gallery](#demo-gallery)
+- [Viewer screenshots](#viewer-screenshots)
 - [Repository layout](#repository-layout)
 - [Installation](#installation)
 - [Quick start](#quick-start)
@@ -39,6 +41,26 @@ The associated paper evaluates groups of three agents over 30 game days on four 
 - **Frontend visualization web page (read-only)**: view runs, metrics, inventories and achievements, knowledge-graph canvases and exploration maps in the browser, without modifying any experiment data. It requires the separately distributed `results/` directory.
 - **Baseline code**: Voyager and Echo re-implemented on the same bare action API.
 
+## Demo gallery
+
+Six short Minecraft clips from the last slide of `演示动图.pptx`. The six source GIFs (88.68 MiB total) were converted to 480×270, 12 fps H.264 MP4s with JPEG posters (6.34 MiB total); **click a thumbnail to play the MP4**. The source GIFs are not included.
+
+| Shelter | Fishing | Obsidian crafting |
+|---|---|---|
+| [![Shelter](media/videos/shelter.jpg)](media/videos/shelter.mp4)<br>[MP4](media/videos/shelter.mp4) | [![Fishing](media/videos/fishing.jpg)](media/videos/fishing.mp4)<br>[MP4](media/videos/fishing.mp4) | [![Obsidian crafting](media/videos/obsidian.jpg)](media/videos/obsidian.mp4)<br>[MP4](media/videos/obsidian.mp4) |
+| Farming | Hunting | Nether portal |
+| [![Farming](media/videos/farming.jpg)](media/videos/farming.mp4)<br>[MP4](media/videos/farming.mp4) | [![Hunting](media/videos/hunting.jpg)](media/videos/hunting.mp4)<br>[MP4](media/videos/hunting.mp4) | [![Nether portal](media/videos/nether_portal.jpg)](media/videos/nether_portal.mp4)<br>[MP4](media/videos/nether_portal.mp4) |
+
+## Viewer screenshots
+
+Screenshots from the read-only viewer, captured with headless Chrome at 1600×1000. The data shelf was hidden; see [media/README.md](media/README.md) for asset provenance.
+
+| Knowledge graph | Exploration map | Map detail |
+|---|---|---|
+| ![Knowledge graph](media/screenshots/knowledge_graph.jpg) | ![Exploration map](media/screenshots/exploration_map.jpg) | ![Map detail](media/screenshots/exploration_map_focus.jpg) |
+| Metrics | Inventory | Achievements |
+| ![Metrics](media/screenshots/metrics.jpg) | ![Inventory](media/screenshots/inventory.jpg) | ![Achievements](media/screenshots/achievements.jpg) |
+
 ## Repository layout
 
 | Path | Contents |
@@ -53,6 +75,7 @@ The associated paper evaluates groups of three agents over 30 game days on four 
 | `viewer/` | Read-only frontend visualization web page for browsing `results/` (Python server + prebuilt frontend). |
 | `paper/iclr2027/tables/` | Per-day series and skill-usage figure data. |
 | `paper/iclr2027/fig/` | The six regenerated result figures as SVG and PDF. |
+| `media/` | Demo clips, posters, and viewer screenshots; see [media/README.md](media/README.md). |
 | `LICENSE` | MIT License with an anonymous copyright holder. |
 
 ## Installation

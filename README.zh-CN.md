@@ -12,6 +12,8 @@
 
 - [什么是 OpenKAGE](#什么是-openkage)
 - [特性](#特性)
+- [演示动图](#演示动图)
+- [可视化界面截图](#可视化界面截图)
 - [仓库结构](#仓库结构)
 - [安装](#安装)
 - [快速开始](#快速开始)
@@ -39,6 +41,26 @@ OpenKAGE 研究 LLM 智能体在 Minecraft 中的开放式长程学习。智能�
 - **前端可视化网页（只读）**：在浏览器中查看 run、各项指标、物品与成就清单、知识图画布和探索地图，不会改动任何实验数据；需要单独发布的 `results/` 目录。
 - **基线代码**：Voyager 与 Echo 在同一套底层动作 API 上复现。
 
+## 演示动图
+
+取自 `演示动图.pptx` 最后一页的六段 Minecraft 短片。六个源 GIF 共 88.68 MiB，已转成 480×270、12 fps 的 H.264 MP4 与 JPEG 封面（合计 6.34 MiB）；**点击封面播放 MP4**。源 GIF 不随仓库发布。
+
+| 建庇护所 | 钓鱼 | 制黑曜石 |
+|---|---|---|
+| [![建庇护所](media/videos/shelter.jpg)](media/videos/shelter.mp4)<br>[MP4](media/videos/shelter.mp4) | [![钓鱼](media/videos/fishing.jpg)](media/videos/fishing.mp4)<br>[MP4](media/videos/fishing.mp4) | [![制黑曜石](media/videos/obsidian.jpg)](media/videos/obsidian.mp4)<br>[MP4](media/videos/obsidian.mp4) |
+| 播种 | 捕猎 | 下界传送门 |
+| [![播种](media/videos/farming.jpg)](media/videos/farming.mp4)<br>[MP4](media/videos/farming.mp4) | [![捕猎](media/videos/hunting.jpg)](media/videos/hunting.mp4)<br>[MP4](media/videos/hunting.mp4) | [![下界传送门](media/videos/nether_portal.jpg)](media/videos/nether_portal.mp4)<br>[MP4](media/videos/nether_portal.mp4) |
+
+## 可视化界面截图
+
+以下截图来自只读可视化网页，由无头 Chrome 在 1600×1000 分辨率下采集；数据卡片栏已隐藏。素材来源见 [media/README.md](media/README.md)。
+
+| 知识图谱 | 探索地图 | 地图细节 |
+|---|---|---|
+| ![知识图谱](media/screenshots/knowledge_graph.jpg) | ![探索地图](media/screenshots/exploration_map.jpg) | ![地图细节](media/screenshots/exploration_map_focus.jpg) |
+| 量化指标 | 物品清单 | 成就清单 |
+| ![量化指标](media/screenshots/metrics.jpg) | ![物品清单](media/screenshots/inventory.jpg) | ![成就清单](media/screenshots/achievements.jpg) |
+
 ## 仓库结构
 
 | 路径 | 内容 |
@@ -53,6 +75,7 @@ OpenKAGE 研究 LLM 智能体在 Minecraft 中的开放式长程学习。智能�
 | `viewer/` | 只读的前端可视化网页，用于浏览 `results/`（Python 服务端 + 预构建前端）。 |
 | `paper/iclr2027/tables/` | 逐日序列与技能使用图数据。 |
 | `paper/iclr2027/fig/` | 六张重绘结果图的 SVG 与 PDF。 |
+| `media/` | 演示短片、封面与可视化界面截图；见 [media/README.md](media/README.md)。 |
 | `LICENSE` | MIT 许可证，版权人使用匿名占位。 |
 
 ## 安装

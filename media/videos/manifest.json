@@ -1,0 +1,92 @@
+[
+  {
+    "media": "image1.gif",
+    "zh": "建庇护所",
+    "en": "Shelter",
+    "slug": "shelter",
+    "frames": 773,
+    "size": [
+      480,
+      270
+    ],
+    "duration_s": 64.4,
+    "gif_mib": 47.76,
+    "mp4_mib": 3.45,
+    "poster_kib": 47.4
+  },
+  {
+    "media": "image2.gif",
+    "zh": "钓鱼",
+    "en": "Fishing",
+    "slug": "fishing",
+    "frames": 631,
+    "size": [
+      480,
+      270
+    ],
+    "duration_s": 52.6,
+    "gif_mib": 14.2,
+    "mp4_mib": 0.92,
+    "poster_kib": 35.2
+  },
+  {
+    "media": "image6.gif",
+    "zh": "制黑曜石",
+    "en": "Obsidian crafting",
+    "slug": "obsidian",
+    "frames": 506,
+    "size": [
+      480,
+      270
+    ],
+    "duration_s": 42.2,
+    "gif_mib": 11.19,
+    "mp4_mib": 0.7,
+    "poster_kib": 31.8
+  },
+  {
+    "media": "image3.gif",
+    "zh": "播种",
+    "en": "Farming",
+    "slug": "farming",
+    "frames": 154,
+    "size": [
+      480,
+      270
+    ],
+    "duration_s": 12.8,
+    "gif_mib": 5.45,
+    "mp4_mib": 0.41,
+    "poster_kib": 36.8
+  },
+  {
+    "media": "image4.gif",
+    "zh": "捕猎",
+    "en": "Hunting",
+    "slug": "hunting",
+    "frames": 173,
+    "size": [
+      480,
+      270
+    ],
+    "duration_s": 14.4,
+    "gif_mib": 7.81,
+    "mp4_mib": 0.49,
+    "poster_kib": 32.3
+  },
+  {
+    "media": "image5.gif",
+    "zh": "下界传送门",
+    "en": "Nether portal",
+    "slug": "nether_portal",
+    "frames": 221,
+    "size": [
+      480,
+      270
+    ],
+    "duration_s": 18.4,
+    "gif_mib": 2.24,
+    "mp4_mib": 0.14,
+    "poster_kib": 39.4
+  }
+]

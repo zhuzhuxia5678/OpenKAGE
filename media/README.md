@@ -2,7 +2,7 @@
 
 ## Demo clips
 
-`videos/` contains six H.264 MP4 clips and JPEG posters converted from the six animated GIFs on the last slide of `演示动图.pptx`. The source GIFs totaled 88.68 MiB and are not included; the MP4s and posters total about 6.34 MiB. All clips are 480×270, 12 fps, no audio, and were remuxed with metadata stripped. `videos/manifest.json` records the Chinese and English labels, source media names, frame counts, and durations.
+`videos/` contains six H.264 MP4 clips and JPEG posters converted from the six animated GIFs on the last slide of `演示动图.pptx`. The source GIFs totaled 88.68 MiB and are not included; the MP4s and posters total about 6.34 MiB. All clips are 480×270, 12 fps, no audio. They were encoded directly from the GIFs; the MP4s carry only standard container/encoder/handler metadata, with no source paths, author names, or custom tags. `videos/manifest.json` records the Chinese and English labels, source media names, frame counts, and durations.
 
 ## Viewer screenshots
 

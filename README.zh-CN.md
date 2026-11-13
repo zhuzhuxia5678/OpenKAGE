@@ -43,7 +43,7 @@ OpenKAGE 研究 LLM 智能体在 Minecraft 中的开放式长程学习。智能�
 
 ## 行为演示
 
-六段代表性 Minecraft 行为演示。六个原始 GIF 共 88.68 MiB，已调色板优化为 480×270、约 8 fps 的循环 GIF（合计 50.94 MiB），下方直接内联播放。`videos/manifest.json` 记录标签、帧数与时长。
+OpenKAGE 的智能体在 Minecraft 中积累情境记忆与可迁移经验，并通过意图感知检索复用群体共享的技能。下面六段展示代表性行为：建庇护所、钓鱼、制黑曜石、播种、捕猎与搭建下界传送门。
 
 | 建庇护所 | 钓鱼 | 制黑曜石 |
 |---|---|---|
@@ -53,7 +53,7 @@ OpenKAGE 研究 LLM 智能体在 Minecraft 中的开放式长程学习。智能�
 
 ## 可视化界面截图
 
-以下截图来自只读可视化网页，由无头 Chrome 在 1600×1000 分辨率下、浅色主题采集；数据卡片栏已隐藏。素材来源见 [media/README.md](media/README.md)。
+只读可视化界面用于查看一次运行中的知识状态：共享/私有图谱、探索轨迹、成就进展，以及概念或技能节点上的条件、经验与技能细节。
 
 | 知识图谱 | 探索地图 |
 |---|---|
@@ -75,7 +75,7 @@ OpenKAGE 研究 LLM 智能体在 Minecraft 中的开放式长程学习。智能�
 | `viewer/` | 只读的前端可视化网页，用于浏览 `results/`（Python 服务端 + 预构建前端）。 |
 | `paper/iclr2027/tables/` | 逐日序列与技能使用图数据。 |
 | `paper/iclr2027/fig/` | 六张重绘结果图的 SVG 与 PDF。 |
-| `media/` | 优化后的演示 GIF 与可视化界面截图；见 [media/README.md](media/README.md)。 |
+| `media/` | README 中使用的行为演示与界面截图；见 [media/README.md](media/README.md)。 |
 | `LICENSE` | MIT 许可证，版权人使用匿名占位。 |
 
 ## 安装

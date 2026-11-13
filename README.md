@@ -43,7 +43,7 @@ The associated paper evaluates groups of three agents over 30 game days on four 
 
 ## Demo gallery
 
-Six short Minecraft behavior demos. The six source GIFs (88.68 MiB total) were palette-optimized to 480×270 looping GIFs (50.94 MiB total) at roughly 8 fps; the clips play inline below. `videos/manifest.json` records labels, frame counts, and durations.
+OpenKAGE agents accumulate situated memories and transferable experience while acting in Minecraft, then reuse shared skills through intent-aware retrieval. The six clips below show representative behaviors: shelter construction, fishing, obsidian crafting, crop planting, hunting, and Nether portal entry.
 
 | Shelter | Fishing | Obsidian crafting |
 |---|---|---|
@@ -53,7 +53,7 @@ Six short Minecraft behavior demos. The six source GIFs (88.68 MiB total) were p
 
 ## Viewer screenshots
 
-Screenshots from the read-only viewer, captured with headless Chrome at 1600×1000 in the light theme. The data shelf was hidden; see [media/README.md](media/README.md) for asset provenance.
+The read-only viewer makes a run's knowledge state inspectable: shared and private graphs, exploration trajectories, achievements, and the facets and skills attached to a concept.
 
 | Knowledge graph | Exploration map |
 |---|---|
@@ -75,7 +75,7 @@ Screenshots from the read-only viewer, captured with headless Chrome at 1600×10
 | `viewer/` | Read-only frontend visualization web page for browsing `results/` (Python server + prebuilt frontend). |
 | `paper/iclr2027/tables/` | Per-day series and skill-usage figure data. |
 | `paper/iclr2027/fig/` | The six regenerated result figures as SVG and PDF. |
-| `media/` | Optimized demo GIFs and viewer screenshots; see [media/README.md](media/README.md). |
+| `media/` | Behavior clips and viewer screenshots used in the README; see [media/README.md](media/README.md). |
 | `LICENSE` | MIT License with an anonymous copyright holder. |
 
 ## Installation

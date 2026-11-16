@@ -44,9 +44,9 @@ The read-only viewer makes a run's knowledge state inspectable: shared and priva
 
 | Knowledge graph | Exploration map |
 |---|---|
-| ![Knowledge graph](media/screenshots/knowledge_graph.jpg) | ![Exploration map](media/screenshots/exploration_map.jpg) |
+| <a href="media/screenshots/knowledge_graph.png"><img src="media/screenshots/knowledge_graph.png" width="100%" alt="Knowledge graph"></a> | <a href="media/screenshots/exploration_map.png"><img src="media/screenshots/exploration_map.png" width="100%" alt="Exploration map"></a> |
 | Achievements | Node detail |
-| ![Achievements](media/screenshots/achievements.jpg) | ![Node detail](media/screenshots/node_detail.jpg) |
+| <a href="media/screenshots/achievements.png"><img src="media/screenshots/achievements.png" width="100%" alt="Achievements"></a> | <a href="media/screenshots/node_detail.png"><img src="media/screenshots/node_detail.png" width="100%" alt="Node detail"></a> |
 
 ## What's in this repository
 

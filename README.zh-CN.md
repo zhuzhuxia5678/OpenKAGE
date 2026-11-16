@@ -44,9 +44,9 @@ python viewer/server.py                    # http://127.0.0.1:8090/
 
 | 知识图谱 | 探索地图 |
 |---|---|
-| ![知识图谱](media/screenshots/knowledge_graph.jpg) | ![探索地图](media/screenshots/exploration_map.jpg) |
+| <a href="media/screenshots/knowledge_graph.png"><img src="media/screenshots/knowledge_graph.png" width="100%" alt="知识图谱"></a> | <a href="media/screenshots/exploration_map.png"><img src="media/screenshots/exploration_map.png" width="100%" alt="探索地图"></a> |
 | 成就清单 | 节点详情 |
-| ![成就清单](media/screenshots/achievements.jpg) | ![节点详情](media/screenshots/node_detail.jpg) |
+| <a href="media/screenshots/achievements.png"><img src="media/screenshots/achievements.png" width="100%" alt="成就清单"></a> | <a href="media/screenshots/node_detail.png"><img src="media/screenshots/node_detail.png" width="100%" alt="节点详情"></a> |
 
 ## 仓库内容
 

@@ -1,42 +1,42 @@
 [
   {
-    "file": "knowledge_graph.jpg",
+    "file": "knowledge_graph.png",
     "caption": "Knowledge graph",
-    "source": "light_knowledge_graph.png",
+    "source": "screenshots_hires/knowledge_graph.png",
     "size": [
-      1280,
-      800
+      3200,
+      2000
     ],
-    "kib": 121.8
+    "mib": 1.74
   },
   {
-    "file": "exploration_map.jpg",
+    "file": "exploration_map.png",
     "caption": "Exploration map",
-    "source": "light_exploration_map.png",
+    "source": "screenshots_hires/exploration_map.png",
     "size": [
-      1280,
-      800
+      3200,
+      2000
     ],
-    "kib": 186.1
+    "mib": 2.13
   },
   {
-    "file": "achievements.jpg",
+    "file": "achievements.png",
     "caption": "Achievements",
-    "source": "light_achievements.png",
+    "source": "screenshots_hires/achievements.png",
     "size": [
-      1280,
-      800
+      3200,
+      2000
     ],
-    "kib": 159.8
+    "mib": 1.91
   },
   {
-    "file": "node_detail.jpg",
+    "file": "node_detail.png",
     "caption": "Node detail",
-    "source": "light_node_detail.png",
+    "source": "screenshots_hires/node_detail.png",
     "size": [
-      1280,
-      800
+      3200,
+      2000
     ],
-    "kib": 123.0
+    "mib": 1.44
   }
 ]

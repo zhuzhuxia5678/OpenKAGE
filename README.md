@@ -14,9 +14,9 @@ OpenKAGE agents acquire situated memories and transferable experience in Minecra
 
 | Shelter | Fishing | Obsidian crafting |
 |---|---|---|
-| ![Shelter](media/videos/shelter.gif) | ![Fishing](media/videos/fishing.gif) | ![Obsidian crafting](media/videos/obsidian.gif) |
+| ![Shelter](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/shelter.gif?v=20261118) | ![Fishing](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/fishing.gif?v=20261118) | ![Obsidian crafting](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/obsidian.gif?v=20261118) |
 | Farming | Hunting | Nether portal |
-| ![Farming](media/videos/farming.gif) | ![Hunting](media/videos/hunting.gif) | ![Nether portal](media/videos/nether_portal.gif) |
+| ![Farming](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/farming.gif?v=20261118) | ![Hunting](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/hunting.gif?v=20261118) | ![Nether portal](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/nether_portal.gif?v=20261118) |
 
 ## Quickstart
 
@@ -44,9 +44,9 @@ The read-only viewer makes a run's knowledge state inspectable: shared and priva
 
 | Knowledge graph | Exploration map |
 |---|---|
-| <a href="media/screenshots/knowledge_graph.png"><img src="media/screenshots/knowledge_graph.png" width="100%" alt="Knowledge graph"></a> | <a href="media/screenshots/exploration_map.png"><img src="media/screenshots/exploration_map.png" width="100%" alt="Exploration map"></a> |
+| [![Knowledge graph](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/knowledge_graph.png?v=20261118)](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/knowledge_graph.png?v=20261118) | [![Exploration map](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/exploration_map.png?v=20261118)](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/exploration_map.png?v=20261118) |
 | Achievements | Node detail |
-| <a href="media/screenshots/achievements.png"><img src="media/screenshots/achievements.png" width="100%" alt="Achievements"></a> | <a href="media/screenshots/node_detail.png"><img src="media/screenshots/node_detail.png" width="100%" alt="Node detail"></a> |
+| [![Achievements](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/achievements.png?v=20261118)](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/achievements.png?v=20261118) | [![Node detail](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/node_detail.png?v=20261118)](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/node_detail.png?v=20261118) |
 
 ## What's in this repository
 

@@ -14,9 +14,9 @@ OpenKAGE 智能体在 Minecraft 中积累情境记忆与可迁移经验，并通
 
 | 建庇护所 | 钓鱼 | 制黑曜石 |
 |---|---|---|
-| ![建庇护所](media/videos/shelter.gif) | ![钓鱼](media/videos/fishing.gif) | ![制黑曜石](media/videos/obsidian.gif) |
+| ![建庇护所](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/shelter.gif?v=20261118) | ![钓鱼](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/fishing.gif?v=20261118) | ![制黑曜石](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/obsidian.gif?v=20261118) |
 | 播种 | 捕猎 | 下界传送门 |
-| ![播种](media/videos/farming.gif) | ![捕猎](media/videos/hunting.gif) | ![下界传送门](media/videos/nether_portal.gif) |
+| ![播种](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/farming.gif?v=20261118) | ![捕猎](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/hunting.gif?v=20261118) | ![下界传送门](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/nether_portal.gif?v=20261118) |
 
 ## 快速开始
 
@@ -44,9 +44,9 @@ python viewer/server.py                    # http://127.0.0.1:8090/
 
 | 知识图谱 | 探索地图 |
 |---|---|
-| <a href="media/screenshots/knowledge_graph.png"><img src="media/screenshots/knowledge_graph.png" width="100%" alt="知识图谱"></a> | <a href="media/screenshots/exploration_map.png"><img src="media/screenshots/exploration_map.png" width="100%" alt="探索地图"></a> |
+| [![知识图谱](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/knowledge_graph.png?v=20261118)](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/knowledge_graph.png?v=20261118) | [![探索地图](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/exploration_map.png?v=20261118)](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/exploration_map.png?v=20261118) |
 | 成就清单 | 节点详情 |
-| <a href="media/screenshots/achievements.png"><img src="media/screenshots/achievements.png" width="100%" alt="成就清单"></a> | <a href="media/screenshots/node_detail.png"><img src="media/screenshots/node_detail.png" width="100%" alt="节点详情"></a> |
+| [![成就清单](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/achievements.png?v=20261118)](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/achievements.png?v=20261118) | [![节点详情](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/node_detail.png?v=20261118)](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/node_detail.png?v=20261118) |
 
 ## 仓库内容
 

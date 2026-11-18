@@ -2,7 +2,7 @@
 
 **Open** **K**nowledge-sharing **A**gent-**G**roup **E**volution —— 一个驱动智能体终身学习和群体进化的框架。
 
-MIT · Python 3 · Minecraft 1.21.11 · ICLR 2027 匿名投稿
+MIT · Python 3 · Minecraft 1.21.11 · 开源项目
 
 [English](README.md)
 
@@ -21,7 +21,7 @@ OpenKAGE 智能体在 Minecraft 中积累情境记忆与可迁移经验，并通
 ## 快速开始
 
 > [!NOTE]
-> 本仓库不附带实验运行记录。请先解包单独发布的匿名归档，使 `results/` 与 `openkage/`、`experiments/`、`viewer/`、`paper/` 同级。
+> 本仓库不附带实验运行记录。请先解包单独发布的运行记录归档，使 `results/` 与 `openkage/`、`experiments/`、`viewer/`、`paper/` 同级。
 
 ```bash
 python experiments/paper_metrics.py --cell ds_openkage --summary
@@ -132,11 +132,11 @@ python experiments/paper_metrics.py --cell glm53_openkage --format json --all
 
 ## 说明
 
-- 这是双盲评审期间的匿名公开仓库：作者姓名、单位、主机名、账号名、内部路径与凭据均已移除。
+- 这是一个开源项目。
 - `results/` 目录有意不放入本仓库；运行记录单独发布，世界存档与向量索引附属文件不在其中。
 - 代码只对接一个 OpenAI 兼容端点，因此模型 id 与采样行为取决于配置的服务商。
 - 仓库内没有 `requirements.txt`，[安装](#安装)按用途列出依赖。可视化网页前端源码位于 [viewer/frontend/src](viewer/frontend/src)。
 
-## 许可证与引用
+## 许可证
 
-评审期以匿名版权人按 [MIT 许可证](LICENSE) 发布。引用信息将在评审期结束后提供。
+按 [MIT 许可证](LICENSE) 发布。

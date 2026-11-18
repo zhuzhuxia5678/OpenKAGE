@@ -2,7 +2,7 @@
 
 **Open** **K**nowledge-sharing **A**gent-**G**roup **E**volution — a framework that drives lifelong learning and collective evolution of agents.
 
-MIT · Python 3 · Minecraft 1.21.11 · ICLR 2027 anonymous submission
+MIT · Python 3 · Minecraft 1.21.11 · open-source project
 
 [简体中文](README.zh-CN.md)
 
@@ -21,7 +21,7 @@ OpenKAGE agents acquire situated memories and transferable experience in Minecra
 ## Quickstart
 
 > [!NOTE]
-> This repository does not bundle the experiment run records. Extract the separate anonymous archive so that its `results/` directory sits beside `openkage/`, `experiments/`, `viewer/`, and `paper/`.
+> This repository does not bundle the experiment run records. Extract the separate results archive so that its `results/` directory sits beside `openkage/`, `experiments/`, `viewer/`, and `paper/`.
 
 ```bash
 python experiments/paper_metrics.py --cell ds_openkage --summary
@@ -132,11 +132,11 @@ The default table reports `Deaths`, `Repeat`, `XP/life`, `Tool era`, `Obsidian`,
 
 ## Notes
 
-- This is an anonymous public repository for a double-blind review: author names, affiliations, host names, account names, internal paths, and credentials were removed.
+- This is an open-source project.
 - The `results/` directory is intentionally absent; run records are distributed separately. World saves and vector-index sidecars are not included.
 - The code talks to a single OpenAI-compatible endpoint, so model ids and sampling behaviour depend on the configured provider.
 - There is no `requirements.txt`; [Installation](#installation) lists dependencies by purpose. The viewer frontend source is in [viewer/frontend/src](viewer/frontend/src).
 
-## License and citation
+## License
 
-Released under the [MIT License](LICENSE) with an anonymous copyright holder during the review period. Citation details will be provided after the review period.
+Released under the [MIT License](LICENSE).

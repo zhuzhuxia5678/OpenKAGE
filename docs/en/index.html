@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1220">
-  <title>OpenKAGE — Open-Source Project</title>
+  <title>OpenKAGE — Lifelong Learning in the Open World</title>
   <meta name="description" content="OpenKAGE is a framework that drives lifelong learning and collective evolution of agents by letting a group of LLM agents accumulate, share, and reuse knowledge in an open world.">
   <link rel="canonical" href="https://zhuzhuxia5678.github.io/OpenKAGE/en/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="OpenKAGE — Open-Source Project">
+  <meta property="og:title" content="OpenKAGE — Lifelong Learning in the Open World">
   <meta property="og:description" content="OpenKAGE is a framework that drives lifelong learning and collective evolution of agents.">
   <meta property="og:url" content="https://zhuzhuxia5678.github.io/OpenKAGE/en/">
   <meta property="og:image" content="https://zhuzhuxia5678.github.io/OpenKAGE/media/screenshots/knowledge_graph.png">
@@ -22,7 +22,8 @@
         <a href="#ideas">Key ideas</a>
         <a href="#demos">Behavior demos</a>
         <a href="#viewer">Viewer</a>
-        <a href="#quickstart">Quickstart</a>
+        <a href="#quickstart">Launch</a>
+        <a href="#reproduce">Reproduce</a>
         <a href="#resources">Resources</a>
         <a class="lang" href="../">简体中文</a>
       </nav>
@@ -32,7 +33,7 @@
   <main id="top">
     <section class="hero">
       <div class="container">
-        <p class="eyebrow">Open-source project · MIT · Python 3 · Minecraft 1.21.11</p>
+        <p class="eyebrow">LLM agents · open world · collective evolution</p>
         <h1>OpenKAGE</h1>
         <p class="expansion"><strong>Open</strong> <strong>K</strong>nowledge-sharing <strong>A</strong>gent-<strong>G</strong>roup <strong>E</strong>volution</p>
         <p class="lead">A framework that drives lifelong learning and collective evolution of agents</p>
@@ -121,22 +122,45 @@
       <div class="container">
         <div class="section-head">
           <p class="kicker">Quickstart</p>
-          <h2>Reproduce from released records</h2>
-          <p>The core repository contains the code, prompts, configuration, analysis scripts, and viewer; the full run records are released separately.</p>
+          <h2>Launch a Minecraft run</h2>
+          <p>Configure <code>.env</code>, install the dependencies, prepare a Minecraft server template and worker directory, then start the rollout loop.</p>
+        </div>
+        <div class="quick">
+          <pre class="code"><code>cp .env.example .env
+pip install openai python-dotenv pyyaml json-repair
+pip install matplotlib Pillow fastapi uvicorn NBT
+(cd domains/minecraft/mc_server &amp;&amp; npm install)
+
+python experiments/run.py --domain minecraft --arms 3 --max-nights 30 \
+  --mc-dir /your/mc/server --mc-workers-dir /your/workers</code></pre>
+          <aside class="note">
+            <h3>Run parameters</h3>
+            <p><code>run.py</code> provisions one Minecraft server per agent, connects the Mineflayer bridge, and writes checkpoints, knowledge graphs, daily contexts, and skill databases under <code>results/</code>. Models, agent count, aggregation cadence, world seed, and difficulty are set in the <a href="https://github.com/zhuzhuxia5678/OpenKAGE/blob/main/configs/openkage_default.yml" target="_blank" rel="noreferrer">configuration</a>. Parallel runs on one machine need disjoint worker directories and port ranges.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reproduce">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Reproducibility</p>
+          <h2>Reproduce released results</h2>
+          <p>The released run records are distributed separately. Extract the archive so that <code>results/</code> sits beside the code directories, then recompute metrics, regenerate figures, and browse run state.</p>
         </div>
         <div class="quick">
           <pre class="code"><code>python experiments/paper_metrics.py --cell ds_openkage --summary
 python experiments/plot_paper_progress.py
 python viewer/server.py</code></pre>
           <aside class="note">
-            <h3>Prepare the data</h3>
-            <p>These commands read the released records directly; no online model or Minecraft server is required. Extract the archive so that <code>results/</code> sits beside <code>openkage/</code>, <code>experiments/</code>, <code>viewer/</code>, and <code>paper/</code>. Dependencies are listed in the <a href="https://github.com/zhuzhuxia5678/OpenKAGE" target="_blank" rel="noreferrer">repository README</a>.</p>
+            <h3>Result inputs</h3>
+            <p>These commands read released checkpoints. Regenerating figures requires Inkscape on <code>PATH</code>; dependencies and command details are in the <a href="https://github.com/zhuzhuxia5678/OpenKAGE" target="_blank" rel="noreferrer">repository README</a>.</p>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="section" id="resources">
+    <section class="section alt" id="resources">
       <div class="container">
         <div class="section-head">
           <p class="kicker">Resources</p>

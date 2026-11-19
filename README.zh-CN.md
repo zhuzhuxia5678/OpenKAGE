@@ -2,7 +2,7 @@
 
 **Open** **K**nowledge-sharing **A**gent-**G**roup **E**volution —— 一个驱动智能体终身学习和群体进化的框架。
 
-MIT · Python 3 · Minecraft 1.21.11 · [论文](https://arxiv.org/abs/2611.24302)
+MIT · Python 3 · Minecraft 1.21.11 · [官网](https://zhuzhuxia5678.github.io/OpenKAGE/) · [论文](https://arxiv.org/abs/2611.24302)
 
 [English](README.md)
 
@@ -18,18 +18,23 @@ OpenKAGE 智能体在 Minecraft 中积累情境记忆与可迁移经验，并通
 | 播种 | 捕猎 | 下界传送门 |
 | ![播种](https://github.com/user-attachments/assets/2d520038-338b-49b2-9b97-01e28329cbcc) | ![捕猎](https://github.com/user-attachments/assets/b768e390-fafb-4cd5-aed3-632206df3c02) | ![下界传送门](https://github.com/user-attachments/assets/f2d02d76-f4f2-455e-8c5a-38f2f0f28839) |
 
-## 快速开始
+## 快速开始：起跑 Minecraft
 
-> [!NOTE]
-> 本仓库不附带实验运行记录。请先解包单独发布的运行记录归档，使 `results/` 与 `openkage/`、`experiments/`、`viewer/`、`paper/` 同级。
+OpenKAGE 在 Minecraft 中驱动一组 LLM 智能体。配置一个 OpenAI 兼容端点，准备 Minecraft 1.21.11 服务端模板和 worker 目录，然后启动 rollout：
 
 ```bash
-python experiments/paper_metrics.py --cell ds_openkage --summary
-python experiments/plot_paper_progress.py
-python viewer/server.py                    # http://127.0.0.1:8090/
+cp .env.example .env
+pip install openai python-dotenv pyyaml json-repair
+pip install matplotlib Pillow fastapi uvicorn NBT
+(cd domains/minecraft/mc_server && npm install)
+
+python experiments/run.py --domain minecraft --arms 3 --max-nights 30 \
+    --mc-dir /your/mc/server --mc-workers-dir /your/workers
 ```
 
-这些命令不需要 LLM 端点或 Minecraft 服务器。依赖见[安装](#安装)。
+`run.py` 为每个智能体准备独立 Minecraft 服务端，连接 Mineflayer 桥接，并把 checkpoint、知识图谱、逐日 context 和技能库写入 `results/`。模型 id、智能体人设、聚合周期、世界种子与难度由 `configs/openkage_default.yml` 决定，命令行 flag 覆盖配置。三个模型角色分别用 `--model-task`、`--model-reflect`、`--model-consolidate` 覆盖。加 `--mc-footage` 会按天录像。同机并行 run 必须用 `--mc-workers-dir`、`--mc-port-base` 和 `--mineflayer-port-base` 错开目录与端口段。
+
+`--no-graph` 起 planner-only 控制组；`--seed-graph <completed-run-dir>` 从已完赛 run 的公共图谱和技能库起步。`run_ablation.py`、`run_voyager.py`、`run_echo.py` 分别起消融与基线。
 
 ## 核心思路
 
@@ -60,33 +65,19 @@ python viewer/server.py                    # http://127.0.0.1:8090/
 | `viewer/` | 只读可视化网页。 |
 | `paper/iclr2027/` | 图数据与重绘结果图。 |
 | `media/` | README 中使用的行为演示与界面截图；见 [media/README.md](media/README.md)。 |
-| `results/` | **不在本仓库内。** 单独发布的运行记录解包到这里。 |
-
-## 安装
-
-```bash
-pip install openai python-dotenv pyyaml json-repair
-pip install matplotlib Pillow fastapi uvicorn NBT
-(cd domains/minecraft/mc_server && npm install)   # 仅跑新实验需要
-```
-
-重绘结果图还需要系统 `PATH` 上有 [Inkscape](https://inkscape.org/)。Minecraft 服务端与 worker 目录不在仓库内；命令行默认值里的 `/path/to/...` 均为占位符，详见[自己跑实验](#自己跑实验)。
-
-## 自己跑实验
-
-```bash
-cp .env.example .env
-python experiments/run.py --help
-python experiments/run.py --domain minecraft --arms 3 --max-nights 30 \
-    --model deepseek-flash --mc-dir /your/mc/server --mc-workers-dir /your/workers
-```
-
-- `run.py` —— OpenKAGE；加 `--no-graph` 跑 planner-only 控制组，加 `--seed-graph <已完赛run目录>` 做迁移。
-- `run_ablation.py` —— 留一消融与 Raw 条件。
-- `run_voyager.py`、`run_echo.py` —— 两个外部基线。
-- `--mc-dir`、`--mc-workers-dir`、`--mc-port-base`、`--mineflayer-port-base` 分别指向真实服务端、worker 模板与空闲端口；同机并行 run 必须错开 worker 目录和端口段。详见 [domains/minecraft/mc_server/README.md](domains/minecraft/mc_server/README.md)。
+| `results/` | `run.py` 产出的运行记录；已发布归档单独提供。 |
 
 ## 复现
+
+完整运行记录单独发布。解包归档，使 `results/` 与 `openkage/`、`experiments/`、`viewer/`、`paper/` 同级。
+
+```bash
+python experiments/paper_metrics.py --cell ds_openkage --summary
+python experiments/plot_paper_progress.py
+python viewer/server.py                    # http://127.0.0.1:8090/
+```
+
+这些命令读取已发布的 checkpoint，不需要在线模型或 Minecraft 服务器。重绘结果图还需要系统 `PATH` 上有 [Inkscape](https://inkscape.org/)。
 
 | 目标 | 命令 | 主要输入 |
 |---|---|---|
@@ -132,10 +123,9 @@ python experiments/paper_metrics.py --cell glm53_openkage --format json --all
 
 ## 说明
 
-- 这是一个开源项目。
-- `results/` 目录有意不放入本仓库；运行记录单独发布，世界存档与向量索引附属文件不在其中。
+- 运行记录单独发布；世界存档与向量索引附属文件不在其中。
 - 代码只对接一个 OpenAI 兼容端点，因此模型 id 与采样行为取决于配置的服务商。
-- 仓库内没有 `requirements.txt`，[安装](#安装)按用途列出依赖。可视化网页前端源码位于 [viewer/frontend/src](viewer/frontend/src)。
+- 可视化网页前端源码位于 [viewer/frontend/src](viewer/frontend/src)。
 
 ## 论文与许可证
 

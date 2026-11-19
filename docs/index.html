@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1220">
-  <title>OpenKAGE — 开源项目</title>
+  <title>OpenKAGE — 开放世界中的智能体终身学习</title>
   <meta name="description" content="OpenKAGE 是一个驱动智能体终身学习和群体进化的框架，让一组 LLM 智能体在开放世界中持续积累、共享并复用知识。">
   <link rel="canonical" href="https://zhuzhuxia5678.github.io/OpenKAGE/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="OpenKAGE — 开源项目">
+  <meta property="og:title" content="OpenKAGE — 开放世界中的智能体终身学习">
   <meta property="og:description" content="OpenKAGE 是一个驱动智能体终身学习和群体进化的框架。">
   <meta property="og:url" content="https://zhuzhuxia5678.github.io/OpenKAGE/">
   <meta property="og:image" content="https://zhuzhuxia5678.github.io/OpenKAGE/media/screenshots/knowledge_graph.png">
@@ -22,7 +22,8 @@
         <a href="#ideas">核心思路</a>
         <a href="#demos">行为演示</a>
         <a href="#viewer">可视化界面</a>
-        <a href="#quickstart">快速开始</a>
+        <a href="#quickstart">起跑</a>
+        <a href="#reproduce">结果复现</a>
         <a href="#resources">项目资源</a>
         <a class="lang" href="en/">English</a>
       </nav>
@@ -32,7 +33,7 @@
   <main id="top">
     <section class="hero">
       <div class="container">
-        <p class="eyebrow">开源项目 · MIT · Python 3 · Minecraft 1.21.11</p>
+        <p class="eyebrow">LLM 智能体 · 开放世界 · 群体进化</p>
         <h1>OpenKAGE</h1>
         <p class="expansion"><strong>Open</strong> <strong>K</strong>nowledge-sharing <strong>A</strong>gent-<strong>G</strong>roup <strong>E</strong>volution</p>
         <p class="lead">一个驱动智能体终身学习和群体进化的框架</p>
@@ -121,22 +122,45 @@
       <div class="container">
         <div class="section-head">
           <p class="kicker">Quickstart</p>
-          <h2>快速开始</h2>
-          <p>核心仓库包含代码、提示词、配置、分析脚本与可视化界面；完整运行记录单独发布。</p>
+          <h2>起跑 Minecraft</h2>
+          <p>配置 <code>.env</code>、安装依赖、准备 Minecraft 服务端模板与 worker 目录，然后启动 rollout。</p>
+        </div>
+        <div class="quick">
+          <pre class="code"><code>cp .env.example .env
+pip install openai python-dotenv pyyaml json-repair
+pip install matplotlib Pillow fastapi uvicorn NBT
+(cd domains/minecraft/mc_server &amp;&amp; npm install)
+
+python experiments/run.py --domain minecraft --arms 3 --max-nights 30 \
+  --mc-dir /your/mc/server --mc-workers-dir /your/workers</code></pre>
+          <aside class="note">
+            <h3>运行参数</h3>
+            <p><code>run.py</code> 为每个智能体准备独立 Minecraft 服务端，连接 Mineflayer 桥接，并把 checkpoint、知识图谱、逐日 context 和技能库写入 <code>results/</code>。模型、角色数、聚合周期、世界种子与难度由 <a href="https://github.com/zhuzhuxia5678/OpenKAGE/blob/main/configs/openkage_default.yml" target="_blank" rel="noreferrer">配置</a>决定；同机并行 run 需错开 worker 目录和端口段。</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reproduce">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Reproducibility</p>
+          <h2>复现论文结果</h2>
+          <p>完整运行记录单独发布。解包归档，使 <code>results/</code> 与代码目录同级，然后复算指标、重绘结果图并浏览运行状态。</p>
         </div>
         <div class="quick">
           <pre class="code"><code>python experiments/paper_metrics.py --cell ds_openkage --summary
 python experiments/plot_paper_progress.py
 python viewer/server.py</code></pre>
           <aside class="note">
-            <h3>准备数据</h3>
-            <p>这些命令直接读取已发布的运行记录，不依赖在线模型或 Minecraft 服务器。解包运行记录，使 <code>results/</code> 与 <code>openkage/</code>、<code>experiments/</code>、<code>viewer/</code>、<code>paper/</code> 同级；依赖安装见<a href="https://github.com/zhuzhuxia5678/OpenKAGE" target="_blank" rel="noreferrer">仓库 README</a>。</p>
+            <h3>结果输入</h3>
+            <p>这些命令读取已发布的 checkpoint。重绘结果图需要系统 <code>PATH</code> 上有 Inkscape；依赖与命令细节见<a href="https://github.com/zhuzhuxia5678/OpenKAGE" target="_blank" rel="noreferrer">仓库 README</a>。</p>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="section" id="resources">
+    <section class="section alt" id="resources">
       <div class="container">
         <div class="section-head">
           <p class="kicker">Resources</p>

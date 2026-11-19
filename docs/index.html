@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <title>OpenKAGE — 开源项目</title>
+  <meta name="description" content="OpenKAGE 是一个驱动智能体终身学习和群体进化的框架，让一组 LLM 智能体在开放世界中持续积累、共享并复用知识。">
+  <link rel="canonical" href="https://zhuzhuxia5678.github.io/OpenKAGE/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OpenKAGE — 开源项目">
+  <meta property="og:description" content="OpenKAGE 是一个驱动智能体终身学习和群体进化的框架。">
+  <meta property="og:url" content="https://zhuzhuxia5678.github.io/OpenKAGE/">
+  <meta property="og:image" content="https://zhuzhuxia5678.github.io/OpenKAGE/media/screenshots/knowledge_graph.png">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Open<span>KAGE</span></a>
+      <nav class="links" aria-label="主导航">
+        <a href="#ideas">核心思路</a>
+        <a href="#demos">行为演示</a>
+        <a href="#viewer">可视化界面</a>
+        <a href="#quickstart">快速开始</a>
+        <a href="#resources">项目资源</a>
+        <a class="lang" href="en/">English</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">开源项目 · MIT · Python 3 · Minecraft 1.21.11</p>
+        <h1>OpenKAGE</h1>
+        <p class="expansion"><strong>Open</strong> <strong>K</strong>nowledge-sharing <strong>A</strong>gent-<strong>G</strong>roup <strong>E</strong>volution</p>
+        <p class="lead">一个驱动智能体终身学习和群体进化的框架</p>
+        <p class="desc">OpenKAGE 让一组 LLM 智能体在开放世界探索中持续积累、共享并复用知识：情境记忆留在本地，可迁移经验与可执行技能进入共享层，由群体持续整合、检索并用于后续决策。</p>
+        <div class="cta">
+          <a class="btn primary" href="https://arxiv.org/abs/2611.24302" target="_blank" rel="noreferrer">阅读论文</a>
+          <a class="btn ghost" href="https://github.com/zhuzhuxia5678/OpenKAGE" target="_blank" rel="noreferrer">查看源码</a>
+          <a class="btn ghost" href="https://github.com/zhuzhuxia5678/OpenKAGE_results/releases/tag/results-v1" target="_blank" rel="noreferrer">运行记录</a>
+        </div>
+        <div class="chips" aria-label="项目要点">
+          <span class="chip">双层知识图</span>
+          <span class="chip">技能共享</span>
+          <span class="chip">意图感知检索</span>
+          <span class="chip">可复现研究栈</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ideas">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Key ideas</p>
+          <h2>核心思路</h2>
+          <p>知识的积累、共享与复用形成持续演进的闭环，让群体经验进入每一个智能体的后续决策。</p>
+        </div>
+        <div class="grid-4">
+          <article class="card">
+            <span class="num">01</span>
+            <h3>双层知识图</h3>
+            <p>记忆层保存与情境绑定的个体记忆；经验层保存可迁移经验和可执行技能，并保留适用条件。</p>
+          </article>
+          <article class="card">
+            <span class="num">02</span>
+            <h3>两种节奏的共享</h3>
+            <p>技能每晚原样共享；每 <code>K = 2</code> 个游戏日，文本经验被整合进持续演进的共享图。</p>
+          </article>
+          <article class="card">
+            <span class="num">03</span>
+            <h3>意图感知检索</h3>
+            <p>规划时同时读取本地图与共享图的子图，让积累的知识重新进入决策。</p>
+          </article>
+          <article class="card">
+            <span class="num">04</span>
+            <h3>完整研究栈</h3>
+            <p>框架本体、两个基线、指标 CLI、绘图管线与只读可视化网页都在仓库内。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="demos">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Behavior demos</p>
+          <h2>行为演示</h2>
+          <p>六段代表性行为展示智能体在 Minecraft 中积累经验，并通过意图感知检索复用群体共享的技能。</p>
+        </div>
+        <div class="grid-3">
+          <figure class="demo"><img src="media/videos/shelter.gif" alt="智能体搭建庇护所" loading="lazy" decoding="async"><figcaption>建庇护所</figcaption></figure>
+          <figure class="demo"><img src="media/videos/fishing.gif" alt="智能体钓鱼" loading="lazy" decoding="async"><figcaption>钓鱼</figcaption></figure>
+          <figure class="demo"><img src="media/videos/obsidian.gif" alt="智能体制备黑曜石" loading="lazy" decoding="async"><figcaption>制黑曜石</figcaption></figure>
+          <figure class="demo"><img src="media/videos/farming.gif" alt="智能体播种" loading="lazy" decoding="async"><figcaption>播种</figcaption></figure>
+          <figure class="demo"><img src="media/videos/hunting.gif" alt="智能体捕猎" loading="lazy" decoding="async"><figcaption>捕猎</figcaption></figure>
+          <figure class="demo"><img src="media/videos/nether_portal.gif" alt="智能体搭建下界传送门" loading="lazy" decoding="async"><figcaption>下界传送门</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="viewer">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Viewer</p>
+          <h2>可视化界面</h2>
+          <p>只读界面用于查看一次运行中的知识状态：共享与私有图谱、探索轨迹、成就进展，以及概念或技能节点上的条件、经验与技能细节。</p>
+        </div>
+        <div class="grid-2">
+          <figure class="shot"><img src="media/screenshots/knowledge_graph.png" alt="知识图谱界面" loading="lazy" decoding="async"><figcaption>知识图谱</figcaption></figure>
+          <figure class="shot"><img src="media/screenshots/exploration_map.png" alt="探索地图界面" loading="lazy" decoding="async"><figcaption>探索地图</figcaption></figure>
+          <figure class="shot"><img src="media/screenshots/achievements.png" alt="成就清单界面" loading="lazy" decoding="async"><figcaption>成就清单</figcaption></figure>
+          <figure class="shot"><img src="media/screenshots/node_detail.png" alt="节点详情界面" loading="lazy" decoding="async"><figcaption>节点详情</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="quickstart">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Quickstart</p>
+          <h2>快速开始</h2>
+          <p>核心仓库包含代码、提示词、配置、分析脚本与可视化界面；完整运行记录单独发布。</p>
+        </div>
+        <div class="quick">
+          <pre class="code"><code>python experiments/paper_metrics.py --cell ds_openkage --summary
+python experiments/plot_paper_progress.py
+python viewer/server.py</code></pre>
+          <aside class="note">
+            <h3>准备数据</h3>
+            <p>这些命令直接读取已发布的运行记录，不依赖在线模型或 Minecraft 服务器。解包运行记录，使 <code>results/</code> 与 <code>openkage/</code>、<code>experiments/</code>、<code>viewer/</code>、<code>paper/</code> 同级；依赖安装见<a href="https://github.com/zhuzhuxia5678/OpenKAGE" target="_blank" rel="noreferrer">仓库 README</a>。</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resources">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Resources</p>
+          <h2>项目资源</h2>
+          <p>论文、代码与运行记录分别提供，便于阅读、复现与检查。</p>
+        </div>
+        <div class="resources">
+          <a class="resource" href="https://github.com/zhuzhuxia5678/OpenKAGE" target="_blank" rel="noreferrer">
+            <h3>代码仓库</h3>
+            <p>框架、基线、提示词、配置、指标 CLI、绘图管线与只读可视化界面。</p>
+            <span class="arrow">前往 GitHub →</span>
+          </a>
+          <a class="resource" href="https://arxiv.org/abs/2611.24302" target="_blank" rel="noreferrer">
+            <h3>论文</h3>
+            <p>OpenKAGE: Open-Ended Lifelong Learning in the Open World via Knowledge-Sharing Agent-Group Evolution。</p>
+            <span class="arrow">arXiv:2611.24302 →</span>
+          </a>
+          <a class="resource" href="https://github.com/zhuzhuxia5678/OpenKAGE_results/releases/tag/results-v1" target="_blank" rel="noreferrer">
+            <h3>运行记录</h3>
+            <p>完整 <code>results/</code> 归档与校验和，用于复算指标、重绘结果图和浏览运行状态。</p>
+            <span class="arrow">获取归档 →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container row">
+      <p>© 2026 OpenKAGE. Released under the MIT License.</p>
+      <div class="links-inline">
+        <a href="https://github.com/zhuzhuxia5678/OpenKAGE" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://arxiv.org/abs/2611.24302" target="_blank" rel="noreferrer">arXiv</a>
+        <a href="https://github.com/zhuzhuxia5678/OpenKAGE_results/releases/tag/results-v1" target="_blank" rel="noreferrer">结果归档</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <title>OpenKAGE — Open-Source Project</title>
+  <meta name="description" content="OpenKAGE is a framework that drives lifelong learning and collective evolution of agents by letting a group of LLM agents accumulate, share, and reuse knowledge in an open world.">
+  <link rel="canonical" href="https://zhuzhuxia5678.github.io/OpenKAGE/en/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OpenKAGE — Open-Source Project">
+  <meta property="og:description" content="OpenKAGE is a framework that drives lifelong learning and collective evolution of agents.">
+  <meta property="og:url" content="https://zhuzhuxia5678.github.io/OpenKAGE/en/">
+  <meta property="og:image" content="https://zhuzhuxia5678.github.io/OpenKAGE/media/screenshots/knowledge_graph.png">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Open<span>KAGE</span></a>
+      <nav class="links" aria-label="Main navigation">
+        <a href="#ideas">Key ideas</a>
+        <a href="#demos">Behavior demos</a>
+        <a href="#viewer">Viewer</a>
+        <a href="#quickstart">Quickstart</a>
+        <a href="#resources">Resources</a>
+        <a class="lang" href="../">简体中文</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Open-source project · MIT · Python 3 · Minecraft 1.21.11</p>
+        <h1>OpenKAGE</h1>
+        <p class="expansion"><strong>Open</strong> <strong>K</strong>nowledge-sharing <strong>A</strong>gent-<strong>G</strong>roup <strong>E</strong>volution</p>
+        <p class="lead">A framework that drives lifelong learning and collective evolution of agents</p>
+        <p class="desc">OpenKAGE lets a group of LLM agents accumulate, share, and reuse knowledge while exploring an open world. Situated memories stay local; transferable experience and executable skills become a shared resource that the group consolidates, retrieves, and builds on over time.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://arxiv.org/abs/2611.24302" target="_blank" rel="noreferrer">Read the paper</a>
+          <a class="btn ghost" href="https://github.com/zhuzhuxia5678/OpenKAGE" target="_blank" rel="noreferrer">Browse the code</a>
+          <a class="btn ghost" href="https://github.com/zhuzhuxia5678/OpenKAGE_results/releases/tag/results-v1" target="_blank" rel="noreferrer">Result records</a>
+        </div>
+        <div class="chips" aria-label="Project highlights">
+          <span class="chip">Two-layer graph</span>
+          <span class="chip">Shared skills</span>
+          <span class="chip">Intent-aware retrieval</span>
+          <span class="chip">Runnable research stack</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ideas">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Key ideas</p>
+          <h2>Knowledge keeps returning to decisions</h2>
+          <p>Accumulation, sharing, and reuse form a continuously evolving loop that brings group experience back into each agent's next decision.</p>
+        </div>
+        <div class="grid-4">
+          <article class="card">
+            <span class="num">01</span>
+            <h3>Two-layer knowledge graph</h3>
+            <p>A memory layer keeps situated, per-agent memories; an experience layer holds transferable experience and executable skills with their applicability conditions.</p>
+          </article>
+          <article class="card">
+            <span class="num">02</span>
+            <h3>Two sharing rhythms</h3>
+            <p>Skills are shared verbatim every night; every <code>K = 2</code> game days, textual experience is consolidated into a continuously evolving shared graph.</p>
+          </article>
+          <article class="card">
+            <span class="num">03</span>
+            <h3>Intent-aware retrieval</h3>
+            <p>Planning reads subgraphs from both local and shared graphs, so accumulated knowledge returns to decisions.</p>
+          </article>
+          <article class="card">
+            <span class="num">04</span>
+            <h3>Complete research stack</h3>
+            <p>The framework, two baselines, metric CLI, figure pipeline, and read-only viewer are all included.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="demos">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Behavior demos</p>
+          <h2>Representative behaviors</h2>
+          <p>Six representative behaviors show agents gaining experience in Minecraft and reusing shared skills through intent-aware retrieval.</p>
+        </div>
+        <div class="grid-3">
+          <figure class="demo"><img src="../media/videos/shelter.gif" alt="An agent builds a shelter" loading="lazy" decoding="async"><figcaption>Shelter</figcaption></figure>
+          <figure class="demo"><img src="../media/videos/fishing.gif" alt="An agent fishes" loading="lazy" decoding="async"><figcaption>Fishing</figcaption></figure>
+          <figure class="demo"><img src="../media/videos/obsidian.gif" alt="An agent crafts obsidian" loading="lazy" decoding="async"><figcaption>Obsidian crafting</figcaption></figure>
+          <figure class="demo"><img src="../media/videos/farming.gif" alt="An agent plants crops" loading="lazy" decoding="async"><figcaption>Farming</figcaption></figure>
+          <figure class="demo"><img src="../media/videos/hunting.gif" alt="An agent hunts" loading="lazy" decoding="async"><figcaption>Hunting</figcaption></figure>
+          <figure class="demo"><img src="../media/videos/nether_portal.gif" alt="An agent enters a Nether portal" loading="lazy" decoding="async"><figcaption>Nether portal</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="viewer">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Viewer</p>
+          <h2>Inspect the knowledge state</h2>
+          <p>The read-only viewer makes a run's knowledge state inspectable: shared and private graphs, exploration trajectories, achievements, and the facets and skills attached to a concept.</p>
+        </div>
+        <div class="grid-2">
+          <figure class="shot"><img src="../media/screenshots/knowledge_graph.png" alt="Knowledge graph view" loading="lazy" decoding="async"><figcaption>Knowledge graph</figcaption></figure>
+          <figure class="shot"><img src="../media/screenshots/exploration_map.png" alt="Exploration map view" loading="lazy" decoding="async"><figcaption>Exploration map</figcaption></figure>
+          <figure class="shot"><img src="../media/screenshots/achievements.png" alt="Achievements view" loading="lazy" decoding="async"><figcaption>Achievements</figcaption></figure>
+          <figure class="shot"><img src="../media/screenshots/node_detail.png" alt="Node detail view" loading="lazy" decoding="async"><figcaption>Node detail</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="quickstart">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Quickstart</p>
+          <h2>Reproduce from released records</h2>
+          <p>The core repository contains the code, prompts, configuration, analysis scripts, and viewer; the full run records are released separately.</p>
+        </div>
+        <div class="quick">
+          <pre class="code"><code>python experiments/paper_metrics.py --cell ds_openkage --summary
+python experiments/plot_paper_progress.py
+python viewer/server.py</code></pre>
+          <aside class="note">
+            <h3>Prepare the data</h3>
+            <p>These commands read the released records directly; no online model or Minecraft server is required. Extract the archive so that <code>results/</code> sits beside <code>openkage/</code>, <code>experiments/</code>, <code>viewer/</code>, and <code>paper/</code>. Dependencies are listed in the <a href="https://github.com/zhuzhuxia5678/OpenKAGE" target="_blank" rel="noreferrer">repository README</a>.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resources">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Resources</p>
+          <h2>Paper, code, and records</h2>
+          <p>The paper, code, and run records are provided separately for reading, reproduction, and inspection.</p>
+        </div>
+        <div class="resources">
+          <a class="resource" href="https://github.com/zhuzhuxia5678/OpenKAGE" target="_blank" rel="noreferrer">
+            <h3>Code repository</h3>
+            <p>Framework, baselines, prompts, configuration, metric CLI, figure pipeline, and read-only viewer.</p>
+            <span class="arrow">Go to GitHub →</span>
+          </a>
+          <a class="resource" href="https://arxiv.org/abs/2611.24302" target="_blank" rel="noreferrer">
+            <h3>Paper</h3>
+            <p>OpenKAGE: Open-Ended Lifelong Learning in the Open World via Knowledge-Sharing Agent-Group Evolution.</p>
+            <span class="arrow">arXiv:2611.24302 →</span>
+          </a>
+          <a class="resource" href="https://github.com/zhuzhuxia5678/OpenKAGE_results/releases/tag/results-v1" target="_blank" rel="noreferrer">
+            <h3>Result records</h3>
+            <p>Full <code>results/</code> archive and checksums for recomputing metrics, regenerating figures, and browsing run state.</p>
+            <span class="arrow">Get the archive →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container row">
+      <p>© 2026 OpenKAGE. Released under the MIT License.</p>
+      <div class="links-inline">
+        <a href="https://github.com/zhuzhuxia5678/OpenKAGE" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://arxiv.org/abs/2611.24302" target="_blank" rel="noreferrer">arXiv</a>
+        <a href="https://github.com/zhuzhuxia5678/OpenKAGE_results/releases/tag/results-v1" target="_blank" rel="noreferrer">Result records</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

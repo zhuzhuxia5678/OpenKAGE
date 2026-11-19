@@ -2,7 +2,7 @@
 
 **Open** **K**nowledge-sharing **A**gent-**G**roup **E**volution —— 一个驱动智能体终身学习和群体进化的框架。
 
-MIT · Python 3 · Minecraft 1.21.11 · 开源项目
+MIT · Python 3 · Minecraft 1.21.11 · [论文](https://arxiv.org/abs/2611.24302)
 
 [English](README.md)
 
@@ -137,6 +137,6 @@ python experiments/paper_metrics.py --cell glm53_openkage --format json --all
 - 代码只对接一个 OpenAI 兼容端点，因此模型 id 与采样行为取决于配置的服务商。
 - 仓库内没有 `requirements.txt`，[安装](#安装)按用途列出依赖。可视化网页前端源码位于 [viewer/frontend/src](viewer/frontend/src)。
 
-## 许可证
+## 论文与许可证
 
-按 [MIT 许可证](LICENSE) 发布。
+[OpenKAGE: Open-Ended Lifelong Learning in the Open World via Knowledge-Sharing Agent-Group Evolution](https://arxiv.org/abs/2611.24302)。按 [MIT 许可证](LICENSE) 发布。

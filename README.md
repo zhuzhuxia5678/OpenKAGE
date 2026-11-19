@@ -2,7 +2,7 @@
 
 **Open** **K**nowledge-sharing **A**gent-**G**roup **E**volution — a framework that drives lifelong learning and collective evolution of agents.
 
-MIT · Python 3 · Minecraft 1.21.11 · open-source project
+MIT · Python 3 · Minecraft 1.21.11 · [Paper](https://arxiv.org/abs/2611.24302)
 
 [简体中文](README.zh-CN.md)
 
@@ -137,6 +137,6 @@ The default table reports `Deaths`, `Repeat`, `XP/life`, `Tool era`, `Obsidian`,
 - The code talks to a single OpenAI-compatible endpoint, so model ids and sampling behaviour depend on the configured provider.
 - There is no `requirements.txt`; [Installation](#installation) lists dependencies by purpose. The viewer frontend source is in [viewer/frontend/src](viewer/frontend/src).
 
-## License
+## Paper and license
 
-Released under the [MIT License](LICENSE).
+[OpenKAGE: Open-Ended Lifelong Learning in the Open World via Knowledge-Sharing Agent-Group Evolution](https://arxiv.org/abs/2611.24302). Released under the [MIT License](LICENSE).

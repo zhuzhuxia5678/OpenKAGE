@@ -14,9 +14,9 @@ OpenKAGE 智能体在 Minecraft 中积累情境记忆与可迁移经验，并通
 
 | 建庇护所 | 钓鱼 | 制黑曜石 |
 |---|---|---|
-| ![建庇护所](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/shelter.gif?v=20261118) | ![钓鱼](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/fishing.gif?v=20261118) | ![制黑曜石](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/obsidian.gif?v=20261118) |
+| ![建庇护所](https://github.com/user-attachments/assets/9fdc0254-cc45-4cd4-9115-394f174ef11d) | ![钓鱼](https://github.com/user-attachments/assets/0c8474a2-5d60-4996-bd8a-50cc211a28bb) | ![制黑曜石](https://github.com/user-attachments/assets/cf93f505-e8b6-4aea-a57f-acdcec1a0144) |
 | 播种 | 捕猎 | 下界传送门 |
-| ![播种](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/farming.gif?v=20261118) | ![捕猎](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/hunting.gif?v=20261118) | ![下界传送门](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/nether_portal.gif?v=20261118) |
+| ![播种](https://github.com/user-attachments/assets/2d520038-338b-49b2-9b97-01e28329cbcc) | ![捕猎](https://github.com/user-attachments/assets/b768e390-fafb-4cd5-aed3-632206df3c02) | ![下界传送门](https://github.com/user-attachments/assets/f2d02d76-f4f2-455e-8c5a-38f2f0f28839) |
 
 ## 快速开始
 
@@ -44,9 +44,9 @@ python viewer/server.py                    # http://127.0.0.1:8090/
 
 | 知识图谱 | 探索地图 |
 |---|---|
-| [![知识图谱](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/knowledge_graph.png?v=20261118)](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/knowledge_graph.png?v=20261118) | [![探索地图](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/exploration_map.png?v=20261118)](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/exploration_map.png?v=20261118) |
+| [![知识图谱](https://github.com/user-attachments/assets/651a8be7-d655-45bb-bf34-dd67e4893798)](https://github.com/user-attachments/assets/651a8be7-d655-45bb-bf34-dd67e4893798) | [![探索地图](https://github.com/user-attachments/assets/e8bef6dd-fdec-4b60-bb4c-9e020e6d3564)](https://github.com/user-attachments/assets/e8bef6dd-fdec-4b60-bb4c-9e020e6d3564) |
 | 成就清单 | 节点详情 |
-| [![成就清单](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/achievements.png?v=20261118)](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/achievements.png?v=20261118) | [![节点详情](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/node_detail.png?v=20261118)](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/node_detail.png?v=20261118) |
+| [![成就清单](https://github.com/user-attachments/assets/f959d506-3ba7-46ce-9d32-640c2dcebc68)](https://github.com/user-attachments/assets/f959d506-3ba7-46ce-9d32-640c2dcebc68) | [![节点详情](https://github.com/user-attachments/assets/42ce1c91-c4cd-46a5-b43a-f8c52748393e)](https://github.com/user-attachments/assets/42ce1c91-c4cd-46a5-b43a-f8c52748393e) |
 
 ## 仓库内容
 

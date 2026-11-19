@@ -1,0 +1,62 @@
+{
+  "farming": {
+    "file": "videos/farming.gif",
+    "url": "https://github.com/user-attachments/assets/2d520038-338b-49b2-9b97-01e28329cbcc",
+    "content_type": "image/gif",
+    "bytes": 546869
+  },
+  "fishing": {
+    "file": "videos/fishing.gif",
+    "url": "https://github.com/user-attachments/assets/0c8474a2-5d60-4996-bd8a-50cc211a28bb",
+    "content_type": "image/gif",
+    "bytes": 1317722
+  },
+  "hunting": {
+    "file": "videos/hunting.gif",
+    "url": "https://github.com/user-attachments/assets/b768e390-fafb-4cd5-aed3-632206df3c02",
+    "content_type": "image/gif",
+    "bytes": 699750
+  },
+  "nether_portal": {
+    "file": "videos/nether_portal.gif",
+    "url": "https://github.com/user-attachments/assets/f2d02d76-f4f2-455e-8c5a-38f2f0f28839",
+    "content_type": "image/gif",
+    "bytes": 191745
+  },
+  "obsidian": {
+    "file": "videos/obsidian.gif",
+    "url": "https://github.com/user-attachments/assets/cf93f505-e8b6-4aea-a57f-acdcec1a0144",
+    "content_type": "image/gif",
+    "bytes": 1076406
+  },
+  "shelter": {
+    "file": "videos/shelter.gif",
+    "url": "https://github.com/user-attachments/assets/9fdc0254-cc45-4cd4-9115-394f174ef11d",
+    "content_type": "image/gif",
+    "bytes": 5087702
+  },
+  "achievements": {
+    "file": "screenshots/achievements.png",
+    "url": "https://github.com/user-attachments/assets/f959d506-3ba7-46ce-9d32-640c2dcebc68",
+    "content_type": "image/png",
+    "bytes": 1999919
+  },
+  "exploration_map": {
+    "file": "screenshots/exploration_map.png",
+    "url": "https://github.com/user-attachments/assets/e8bef6dd-fdec-4b60-bb4c-9e020e6d3564",
+    "content_type": "image/png",
+    "bytes": 2229479
+  },
+  "knowledge_graph": {
+    "file": "screenshots/knowledge_graph.png",
+    "url": "https://github.com/user-attachments/assets/651a8be7-d655-45bb-bf34-dd67e4893798",
+    "content_type": "image/png",
+    "bytes": 1824191
+  },
+  "node_detail": {
+    "file": "screenshots/node_detail.png",
+    "url": "https://github.com/user-attachments/assets/42ce1c91-c4cd-46a5-b43a-f8c52748393e",
+    "content_type": "image/png",
+    "bytes": 1509194
+  }
+}

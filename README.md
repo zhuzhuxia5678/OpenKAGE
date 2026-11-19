@@ -14,9 +14,9 @@ OpenKAGE agents acquire situated memories and transferable experience in Minecra
 
 | Shelter | Fishing | Obsidian crafting |
 |---|---|---|
-| ![Shelter](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/shelter.gif?v=20261118) | ![Fishing](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/fishing.gif?v=20261118) | ![Obsidian crafting](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/obsidian.gif?v=20261118) |
+| ![Shelter](https://github.com/user-attachments/assets/9fdc0254-cc45-4cd4-9115-394f174ef11d) | ![Fishing](https://github.com/user-attachments/assets/0c8474a2-5d60-4996-bd8a-50cc211a28bb) | ![Obsidian crafting](https://github.com/user-attachments/assets/cf93f505-e8b6-4aea-a57f-acdcec1a0144) |
 | Farming | Hunting | Nether portal |
-| ![Farming](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/farming.gif?v=20261118) | ![Hunting](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/hunting.gif?v=20261118) | ![Nether portal](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/videos/nether_portal.gif?v=20261118) |
+| ![Farming](https://github.com/user-attachments/assets/2d520038-338b-49b2-9b97-01e28329cbcc) | ![Hunting](https://github.com/user-attachments/assets/b768e390-fafb-4cd5-aed3-632206df3c02) | ![Nether portal](https://github.com/user-attachments/assets/f2d02d76-f4f2-455e-8c5a-38f2f0f28839) |
 
 ## Quickstart
 
@@ -44,9 +44,9 @@ The read-only viewer makes a run's knowledge state inspectable: shared and priva
 
 | Knowledge graph | Exploration map |
 |---|---|
-| [![Knowledge graph](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/knowledge_graph.png?v=20261118)](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/knowledge_graph.png?v=20261118) | [![Exploration map](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/exploration_map.png?v=20261118)](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/exploration_map.png?v=20261118) |
+| [![Knowledge graph](https://github.com/user-attachments/assets/651a8be7-d655-45bb-bf34-dd67e4893798)](https://github.com/user-attachments/assets/651a8be7-d655-45bb-bf34-dd67e4893798) | [![Exploration map](https://github.com/user-attachments/assets/e8bef6dd-fdec-4b60-bb4c-9e020e6d3564)](https://github.com/user-attachments/assets/e8bef6dd-fdec-4b60-bb4c-9e020e6d3564) |
 | Achievements | Node detail |
-| [![Achievements](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/achievements.png?v=20261118)](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/achievements.png?v=20261118) | [![Node detail](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/node_detail.png?v=20261118)](https://raw.githubusercontent.com/zhuzhuxia5678/OpenKAGE/main/media/screenshots/node_detail.png?v=20261118) |
+| [![Achievements](https://github.com/user-attachments/assets/f959d506-3ba7-46ce-9d32-640c2dcebc68)](https://github.com/user-attachments/assets/f959d506-3ba7-46ce-9d32-640c2dcebc68) | [![Node detail](https://github.com/user-attachments/assets/42ce1c91-c4cd-46a5-b43a-f8c52748393e)](https://github.com/user-attachments/assets/42ce1c91-c4cd-46a5-b43a-f8c52748393e) |
 
 ## What's in this repository
 

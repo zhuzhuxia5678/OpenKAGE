@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "arxiv",
+    "label": "arXiv",
+    "file": "badge_arxiv.png",
+    "link": "https://arxiv.org/abs/2611.24302",
+    "width": 69,
+    "height": 24,
+    "sha256": "91e927f7e2438b0f585af470dd9800cb13632b28331fb6d10604505ed5a0d08e",
+    "url": "https://github.com/user-attachments/assets/6e30acfc-24d1-4c12-9e48-a1327daffd2c"
+  },
+  {
+    "slug": "website",
+    "label": "Website",
+    "file": "badge_website.png",
+    "link": "https://zhuzhuxia5678.github.io/OpenKAGE/",
+    "width": 84,
+    "height": 24,
+    "sha256": "6467d4cef421fa2f921cc3bb822cef2b4b19085a5c1b400827bb5dfeb71baa83",
+    "url": "https://github.com/user-attachments/assets/d0d6b374-621b-4059-8eca-eefcf8b16c26"
+  },
+  {
+    "slug": "python",
+    "label": "Python 3",
+    "file": "badge_python.png",
+    "link": "https://www.python.org/",
+    "width": 88,
+    "height": 24,
+    "sha256": "37c9544dbcc4002d6086c7c345e3828481ece8707b8e72b62d540e2585457079",
+    "url": "https://github.com/user-attachments/assets/11fec6f4-f81c-4410-a58a-9d6ecb3dc0b6"
+  },
+  {
+    "slug": "minecraft",
+    "label": "Minecraft 1.21.11",
+    "file": "badge_minecraft.png",
+    "link": "https://www.minecraft.net/",
+    "width": 130,
+    "height": 24,
+    "sha256": "383f3df3f88589eef592e8c727b54e1da9f7985d3f93bb1a6f1b794f4ab2a129",
+    "url": "https://github.com/user-attachments/assets/788ba52f-88fe-4ecd-af4c-e01fff4622dd"
+  },
+  {
+    "slug": "license",
+    "label": "MIT",
+    "file": "badge_license.png",
+    "link": "LICENSE",
+    "width": 61,
+    "height": 24,
+    "sha256": "36b6174e56f9e95dbdaa8acf8f05aa1d9fc832c9c035e1df489153a3cabf59a7",
+    "url": "https://github.com/user-attachments/assets/e63468b0-b8ee-4bf3-a52c-80e793bfe9ed"
+  },
+  {
+    "slug": "results",
+    "label": "Results",
+    "file": "badge_results.png",
+    "link": "https://github.com/zhuzhuxia5678/OpenKAGE_results/releases/tag/results-v1",
+    "width": 81,
+    "height": 24,
+    "sha256": "a71e823b77092a220f587e883c374e61ca901165d49ae5e2d681a65c867afff7",
+    "url": "https://github.com/user-attachments/assets/355b83a3-c7b6-4d6b-ac45-b095cb94d06b"
+  }
+]

@@ -58,5 +58,55 @@
     "url": "https://github.com/user-attachments/assets/42ce1c91-c4cd-46a5-b43a-f8c52748393e",
     "content_type": "image/png",
     "bytes": 1509194
+  },
+  "badges": {
+    "arxiv": {
+      "file": "badges/badge_arxiv.png",
+      "url": "https://github.com/user-attachments/assets/6e30acfc-24d1-4c12-9e48-a1327daffd2c",
+      "content_type": "image/png",
+      "bytes": 1870,
+      "width": 69,
+      "height": 24
+    },
+    "website": {
+      "file": "badges/badge_website.png",
+      "url": "https://github.com/user-attachments/assets/d0d6b374-621b-4059-8eca-eefcf8b16c26",
+      "content_type": "image/png",
+      "bytes": 2517,
+      "width": 84,
+      "height": 24
+    },
+    "python": {
+      "file": "badges/badge_python.png",
+      "url": "https://github.com/user-attachments/assets/11fec6f4-f81c-4410-a58a-9d6ecb3dc0b6",
+      "content_type": "image/png",
+      "bytes": 2981,
+      "width": 88,
+      "height": 24
+    },
+    "minecraft": {
+      "file": "badges/badge_minecraft.png",
+      "url": "https://github.com/user-attachments/assets/788ba52f-88fe-4ecd-af4c-e01fff4622dd",
+      "content_type": "image/png",
+      "bytes": 3360,
+      "width": 130,
+      "height": 24
+    },
+    "license": {
+      "file": "badges/badge_license.png",
+      "url": "https://github.com/user-attachments/assets/e63468b0-b8ee-4bf3-a52c-80e793bfe9ed",
+      "content_type": "image/png",
+      "bytes": 976,
+      "width": 61,
+      "height": 24
+    },
+    "results": {
+      "file": "badges/badge_results.png",
+      "url": "https://github.com/user-attachments/assets/355b83a3-c7b6-4d6b-ac45-b095cb94d06b",
+      "content_type": "image/png",
+      "bytes": 1965,
+      "width": 81,
+      "height": 24
+    }
   }
 }

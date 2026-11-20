@@ -1,14 +1,19 @@
 # OpenKAGE
 
-**Open** **K**nowledge-sharing **A**gent-**G**roup **E**volution — a framework that drives lifelong learning and collective evolution of agents.
-
-MIT · Python 3 · Minecraft 1.21.11 · [Website](https://zhuzhuxia5678.github.io/OpenKAGE/) · [Paper](https://arxiv.org/abs/2611.24302)
+<a href="https://arxiv.org/abs/2611.24302"><img src="https://github.com/user-attachments/assets/6e30acfc-24d1-4c12-9e48-a1327daffd2c" alt="arXiv" width="69" height="24"></a>
+<a href="https://zhuzhuxia5678.github.io/OpenKAGE/"><img src="https://github.com/user-attachments/assets/d0d6b374-621b-4059-8eca-eefcf8b16c26" alt="Website" width="84" height="24"></a>
+<a href="https://www.python.org/"><img src="https://github.com/user-attachments/assets/11fec6f4-f81c-4410-a58a-9d6ecb3dc0b6" alt="Python 3" width="88" height="24"></a>
+<a href="https://www.minecraft.net/"><img src="https://github.com/user-attachments/assets/788ba52f-88fe-4ecd-af4c-e01fff4622dd" alt="Minecraft 1.21.11" width="130" height="24"></a>
+<a href="LICENSE"><img src="https://github.com/user-attachments/assets/e63468b0-b8ee-4bf3-a52c-80e793bfe9ed" alt="MIT" width="61" height="24"></a>
+<a href="https://github.com/zhuzhuxia5678/OpenKAGE_results/releases/tag/results-v1"><img src="https://github.com/user-attachments/assets/355b83a3-c7b6-4d6b-ac45-b095cb94d06b" alt="Results" width="81" height="24"></a>
 
 [简体中文](README.zh-CN.md)
 
+**Open** **K**nowledge-sharing **A**gent-**G**roup **E**volution — a framework that drives lifelong learning and collective evolution of agents.
+
 OpenKAGE lets a group of LLM agents accumulate, share, and reuse knowledge while exploring an open world. Situated memories stay local; transferable experience and executable skills become a shared resource that the group consolidates, retrieves, and builds on over time.
 
-## Behavior demos
+## 🎬 Behavior demos
 
 OpenKAGE agents acquire situated memories and transferable experience in Minecraft, then reuse shared skills through intent-aware retrieval. The six clips below show representative behaviors: shelter construction, fishing, obsidian crafting, crop planting, hunting, and Nether portal entry.
 
@@ -18,7 +23,7 @@ OpenKAGE agents acquire situated memories and transferable experience in Minecra
 | Farming | Hunting | Nether portal |
 | ![Farming](https://github.com/user-attachments/assets/2d520038-338b-49b2-9b97-01e28329cbcc) | ![Hunting](https://github.com/user-attachments/assets/b768e390-fafb-4cd5-aed3-632206df3c02) | ![Nether portal](https://github.com/user-attachments/assets/f2d02d76-f4f2-455e-8c5a-38f2f0f28839) |
 
-## Quickstart: launch a Minecraft run
+## 🚀 Quickstart: launch a Minecraft run
 
 OpenKAGE runs a group of LLM agents inside Minecraft. Configure an OpenAI-compatible endpoint, prepare a Minecraft 1.21.11 server template and a worker directory, then start the rollout loop:
 
@@ -36,14 +41,14 @@ python experiments/run.py --domain minecraft --arms 3 --max-nights 30 \
 
 `--no-graph` starts the planner-only control; `--seed-graph <completed-run-dir>` starts from a completed run's public graph and skills. `run_ablation.py`, `run_voyager.py`, and `run_echo.py` start the ablations and baselines.
 
-## Key ideas
+## 🧠 Key ideas
 
 - **Two-layer knowledge graph.** A memory layer keeps situated, per-agent memories; an experience layer holds transferable experience and executable skills with their applicability conditions.
 - **Shared knowledge with two rhythms.** Skills are shared verbatim every night; every `K = 2` game days, textual experience is consolidated into a continuously evolving shared graph.
 - **Intent-aware retrieval.** Planning reads subgraphs from both local and shared graphs, so accumulated knowledge returns to decisions.
 - **Runnable research stack.** The framework, two baselines, metric CLI, figure pipeline, and read-only viewer are all included.
 
-## Viewer
+## 🗺️ Viewer
 
 The read-only viewer makes a run's knowledge state inspectable: shared and private graphs, exploration trajectories, achievements, and the facets and skills attached to a concept.
 
@@ -53,7 +58,7 @@ The read-only viewer makes a run's knowledge state inspectable: shared and priva
 | Achievements | Node detail |
 | [![Achievements](https://github.com/user-attachments/assets/f959d506-3ba7-46ce-9d32-640c2dcebc68)](https://github.com/user-attachments/assets/f959d506-3ba7-46ce-9d32-640c2dcebc68) | [![Node detail](https://github.com/user-attachments/assets/42ce1c91-c4cd-46a5-b43a-f8c52748393e)](https://github.com/user-attachments/assets/42ce1c91-c4cd-46a5-b43a-f8c52748393e) |
 
-## What's in this repository
+## 📦 What's in this repository
 
 | Path | What it contains |
 |---|---|
@@ -67,7 +72,7 @@ The read-only viewer makes a run's knowledge state inspectable: shared and priva
 | `media/` | Behavior clips and viewer screenshots used in this README; see [media/README.md](media/README.md). |
 | `results/` | Run records produced by `run.py`; the released archive is distributed separately. |
 
-## Reproducibility
+## 📊 Reproducibility
 
 The released run records are distributed separately. Extract the archive so that `results/` sits beside `openkage/`, `experiments/`, `viewer/`, and `paper/`.
 
@@ -121,12 +126,12 @@ The default table reports `Deaths`, `Repeat`, `XP/life`, `Tool era`, `Obsidian`,
 
 </details>
 
-## Notes
+## 📝 Notes
 
 - Run records are distributed separately; world saves and vector-index sidecars are excluded.
 - The code talks to a single OpenAI-compatible endpoint, so model ids and sampling behaviour depend on the configured provider.
 - The viewer frontend source is in [viewer/frontend/src](viewer/frontend/src).
 
-## Paper and license
+## 📄 Paper and license
 
 [OpenKAGE: Open-Ended Lifelong Learning in the Open World via Knowledge-Sharing Agent-Group Evolution](https://arxiv.org/abs/2611.24302). Released under the [MIT License](LICENSE).

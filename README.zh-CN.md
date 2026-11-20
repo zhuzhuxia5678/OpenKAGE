@@ -1,14 +1,19 @@
 # OpenKAGE
 
-**Open** **K**nowledge-sharing **A**gent-**G**roup **E**volution —— 一个驱动智能体终身学习和群体进化的框架。
-
-MIT · Python 3 · Minecraft 1.21.11 · [官网](https://zhuzhuxia5678.github.io/OpenKAGE/) · [论文](https://arxiv.org/abs/2611.24302)
+<a href="https://arxiv.org/abs/2611.24302"><img src="https://github.com/user-attachments/assets/6e30acfc-24d1-4c12-9e48-a1327daffd2c" alt="arXiv" width="69" height="24"></a>
+<a href="https://zhuzhuxia5678.github.io/OpenKAGE/"><img src="https://github.com/user-attachments/assets/d0d6b374-621b-4059-8eca-eefcf8b16c26" alt="Website" width="84" height="24"></a>
+<a href="https://www.python.org/"><img src="https://github.com/user-attachments/assets/11fec6f4-f81c-4410-a58a-9d6ecb3dc0b6" alt="Python 3" width="88" height="24"></a>
+<a href="https://www.minecraft.net/"><img src="https://github.com/user-attachments/assets/788ba52f-88fe-4ecd-af4c-e01fff4622dd" alt="Minecraft 1.21.11" width="130" height="24"></a>
+<a href="LICENSE"><img src="https://github.com/user-attachments/assets/e63468b0-b8ee-4bf3-a52c-80e793bfe9ed" alt="MIT" width="61" height="24"></a>
+<a href="https://github.com/zhuzhuxia5678/OpenKAGE_results/releases/tag/results-v1"><img src="https://github.com/user-attachments/assets/355b83a3-c7b6-4d6b-ac45-b095cb94d06b" alt="Results" width="81" height="24"></a>
 
 [English](README.md)
 
+**Open** **K**nowledge-sharing **A**gent-**G**roup **E**volution —— 一个驱动智能体终身学习和群体进化的框架。
+
 OpenKAGE 让一组 LLM 智能体在开放世界探索中持续积累、共享并复用知识：情境记忆留在本地，可迁移经验与可执行技能进入共享层，由群体持续整合、检索并用于后续决策。
 
-## 行为演示
+## 🎬 行为演示
 
 OpenKAGE 智能体在 Minecraft 中积累情境记忆与可迁移经验，并通过意图感知检索复用群体共享的技能。下面六段展示代表性行为：建庇护所、钓鱼、制黑曜石、播种、捕猎与搭建下界传送门。
 
@@ -18,7 +23,7 @@ OpenKAGE 智能体在 Minecraft 中积累情境记忆与可迁移经验，并通
 | 播种 | 捕猎 | 下界传送门 |
 | ![播种](https://github.com/user-attachments/assets/2d520038-338b-49b2-9b97-01e28329cbcc) | ![捕猎](https://github.com/user-attachments/assets/b768e390-fafb-4cd5-aed3-632206df3c02) | ![下界传送门](https://github.com/user-attachments/assets/f2d02d76-f4f2-455e-8c5a-38f2f0f28839) |
 
-## 快速开始：起跑 Minecraft
+## 🚀 快速开始：起跑 Minecraft
 
 OpenKAGE 在 Minecraft 中驱动一组 LLM 智能体。配置一个 OpenAI 兼容端点，准备 Minecraft 1.21.11 服务端模板和 worker 目录，然后启动 rollout：
 
@@ -36,14 +41,14 @@ python experiments/run.py --domain minecraft --arms 3 --max-nights 30 \
 
 `--no-graph` 起 planner-only 控制组；`--seed-graph <completed-run-dir>` 从已完赛 run 的公共图谱和技能库起步。`run_ablation.py`、`run_voyager.py`、`run_echo.py` 分别起消融与基线。
 
-## 核心思路
+## 🧠 核心思路
 
 - **双层知识图。** 记忆层保存与情境绑定的个体记忆；经验层保存可迁移经验和可执行技能，并保留适用条件。
 - **两种节奏的共享。** 技能每晚原样共享；每 `K = 2` 个游戏日，文本经验被整合进持续演进的共享图。
 - **意图感知检索。** 规划时同时读取本地图与共享图的子图，让积累的知识重新进入决策。
 - **完整可运行的研究栈。** 框架本体、两个基线、指标 CLI、绘图管线与只读可视化网页都在仓库内。
 
-## 可视化界面
+## 🗺️ 可视化界面
 
 只读可视化界面用于查看一次运行中的知识状态：共享/私有图谱、探索轨迹、成就进展，以及概念或技能节点上的条件、经验与技能细节。
 
@@ -53,7 +58,7 @@ python experiments/run.py --domain minecraft --arms 3 --max-nights 30 \
 | 成就清单 | 节点详情 |
 | [![成就清单](https://github.com/user-attachments/assets/f959d506-3ba7-46ce-9d32-640c2dcebc68)](https://github.com/user-attachments/assets/f959d506-3ba7-46ce-9d32-640c2dcebc68) | [![节点详情](https://github.com/user-attachments/assets/42ce1c91-c4cd-46a5-b43a-f8c52748393e)](https://github.com/user-attachments/assets/42ce1c91-c4cd-46a5-b43a-f8c52748393e) |
 
-## 仓库内容
+## 📦 仓库内容
 
 | 路径 | 内容 |
 |---|---|
@@ -67,7 +72,7 @@ python experiments/run.py --domain minecraft --arms 3 --max-nights 30 \
 | `media/` | README 中使用的行为演示与界面截图；见 [media/README.md](media/README.md)。 |
 | `results/` | `run.py` 产出的运行记录；已发布归档单独提供。 |
 
-## 复现
+## 📊 复现
 
 完整运行记录单独发布。解包归档，使 `results/` 与 `openkage/`、`experiments/`、`viewer/`、`paper/` 同级。
 
@@ -121,12 +126,12 @@ python experiments/paper_metrics.py --cell glm53_openkage --format json --all
 
 </details>
 
-## 说明
+## 📝 说明
 
 - 运行记录单独发布；世界存档与向量索引附属文件不在其中。
 - 代码只对接一个 OpenAI 兼容端点，因此模型 id 与采样行为取决于配置的服务商。
 - 可视化网页前端源码位于 [viewer/frontend/src](viewer/frontend/src)。
 
-## 论文与许可证
+## 📄 论文与许可证
 
 [OpenKAGE: Open-Ended Lifelong Learning in the Open World via Knowledge-Sharing Agent-Group Evolution](https://arxiv.org/abs/2611.24302)。按 [MIT 许可证](LICENSE) 发布。
